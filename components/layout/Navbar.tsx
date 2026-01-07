@@ -35,10 +35,10 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-12">
+        <div className="flex items-center justify-between h-16">
           
           {/* Logo - Optical Alignment */}
-          <Link href="/" className="relative block h-7 w-48 opacity-90 hover:opacity-100 transition-opacity duration-300">
+          <Link href="/" className="relative block h-14 w-80 opacity-90 hover:opacity-100 transition-opacity duration-300">
             <Image 
               src="/logo-wordmark.svg" 
               alt="Rob Lipsett" 
@@ -86,7 +86,7 @@ export function Navbar() {
           "fixed inset-x-0 bg-background/95 backdrop-blur-lg md:hidden transition-all duration-500 ease-in-out overflow-hidden border-b border-white/5",
           isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
         )}
-        style={{ top: isScrolled ? "65px" : "81px" }}
+        style={{ top: isScrolled ? "81px" : "97px" }}
       >
         <div className="flex flex-col p-8 space-y-6">
           {navLinks.map((link) => (

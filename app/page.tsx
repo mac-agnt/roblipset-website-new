@@ -4,7 +4,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Programs } from "@/components/sections/Programs";
 import { Method } from "@/components/sections/Method";
 import { Results } from "@/components/sections/Results";
-import { AppShowcase } from "@/components/sections/AppShowcase";
 import { Collaborations } from "@/components/sections/Collaborations";
 import { Podcast } from "@/components/sections/Podcast";
 import { EmailCapture } from "@/components/sections/EmailCapture";
@@ -17,7 +16,6 @@ export default function Home() {
       <Programs />
       <Method />
       <Results />
-      <AppShowcase />
       <Collaborations />
       <Podcast />
       <EmailCapture />

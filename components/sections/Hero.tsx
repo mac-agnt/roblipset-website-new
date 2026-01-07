@@ -67,14 +67,6 @@ export function Hero() {
           {/* CTA + Brand Stamps */}
           <div className="space-y-12">
             
-            {/* Primary CTA - Calm Presence */}
-            <Link 
-              href="/programs"
-              className="inline-flex items-center justify-center h-10 px-8 text-[10px] font-medium uppercase tracking-[0.2em] bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-black transition-colors duration-300"
-            >
-              Start Training
-            </Link>
-            
             {/* Brand Logos - Stamps - Strict Optical Alignment */}
             <div className="flex items-end gap-8 opacity-[0.18] grayscale select-none pointer-events-none">
               

@@ -24,22 +24,22 @@ function ProgramsHero() {
   return (
     <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-background">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#000000] opacity-90" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#000000] opacity-95" />
+        <div className="bg-noise" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
-        <div className="max-w-3xl mx-auto space-y-6">
-          <h1 className="font-serif text-4xl md:text-6xl text-white leading-tight">
-            Train with Structure. <br />
-            <span className="text-[var(--accent)]">Train with Purpose.</span>
+        <div className="max-w-3xl mx-auto space-y-8">
+          <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.9] tracking-tight text-balance">
+            Structure. Purpose. <br />
+            <span className="text-white/40">Progression.</span>
           </h1>
-          <p className="font-sans text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-            Stop guessing. My programs provide the structure, accountability, and proven system you need to build a sustainable, powerful physique.
+          <p className="font-sans text-lg text-white/50 max-w-lg mx-auto leading-relaxed text-pretty">
+            Stop guessing. My system provides the accountability and structure you need to build a powerful physique.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
             <Button variant="primary" size="lg">Join the Program</Button>
-            <Button variant="ghost" size="lg">See What's Included</Button>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 pt-4 sm:pt-0">SCROLL TO EXPLORE</span>
           </div>
         </div>
       </div>
@@ -49,23 +49,20 @@ function ProgramsHero() {
 
 function Differences() {
   const pillars = [
-    { title: "Structured Progression", desc: "No random workouts. Every session builds on the last to ensure consistent results." },
-    { title: "Coaching Philosophy", desc: "Built on science and experience, not trends. We focus on what actually works." },
-    { title: "Holistic Approach", desc: "Training, nutrition, and mindset integrated into one cohesive system." },
-    { title: "Built for Consistency", desc: "Sustainable routines that fit your lifestyle, avoiding burnout and extremes." }
+    { title: "Progression", desc: "Every session builds on the last." },
+    { title: "Philosophy", desc: "Science-based. No trends." },
+    { title: "Holistic", desc: "Training. Nutrition. Mindset." },
+    { title: "Consistency", desc: "Sustainable routines. No burnout." }
   ];
 
   return (
-    <section className="py-20 bg-[#050505] border-b border-white/5">
+    <section className="py-32 bg-[#050505] border-b border-white/[0.03]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">More Than Just a Workout Plan</h2>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-12">
           {pillars.map((pillar) => (
-            <div key={pillar.title} className="p-6 bg-white/5 border border-white/5 hover:border-[var(--accent)] transition-colors">
-              <h3 className="font-serif text-xl text-white mb-3">{pillar.title}</h3>
-              <p className="text-sm text-white/60 leading-relaxed">{pillar.desc}</p>
+            <div key={pillar.title} className="group">
+              <h3 className="font-serif text-2xl text-white mb-4 group-hover:text-[var(--accent)] transition-colors duration-500">{pillar.title}</h3>
+              <p className="text-sm text-white/40 leading-relaxed">{pillar.desc}</p>
             </div>
           ))}
         </div>
@@ -77,36 +74,35 @@ function Differences() {
 function ProgramOptions() {
   const programs = [
     {
-      name: "1:1 Online Coaching",
-      target: "For those wanting maximum accountability",
-      outcome: "Complete transformation",
-      desc: "My online coaching provides you with a customised training plan, tailored diet, and access to my private Facebook Group.",
-      cta: "Apply for Coaching",
+      name: "1:1 Coaching",
+      target: "Maximum Accountability",
+      outcome: "Total Transformation",
+      desc: "Customised training. Tailored diet. Private access.",
+      cta: "Apply Now",
       variant: "primary" as const
     },
     {
-      name: "The Game Plan App",
-      target: "For the self-driven athlete",
-      outcome: "Structure on your terms",
-      desc: "Unlock the best version of yourself. Access structured workout programs, nutrition tracking, and mindset guides anywhere.",
-      cta: "Start Your Free Trial",
+      name: "The App",
+      target: "Self-Driven Athlete",
+      outcome: "Structure on Demand",
+      desc: "Workout programs. Nutrition tracking. Mindset guides.",
+      cta: "Start Free Trial",
       variant: "outline" as const
     }
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {programs.map((program) => (
-            <div key={program.name} className="flex flex-col bg-[#0f0f0f] border border-white/10 p-8 md:p-12 hover:border-[var(--accent)]/50 transition-all duration-300">
-              <div className="mb-6">
-                 <span className="text-xs font-mono text-[var(--accent)] uppercase tracking-widest">{program.target}</span>
-                 <h3 className="font-serif text-3xl text-white mt-2 mb-4">{program.name}</h3>
-                 <p className="text-white/60 leading-relaxed">{program.desc}</p>
+            <div key={program.name} className="flex flex-col bg-[#0a0a0a] border border-white/[0.05] p-12 hover:border-white/10 transition-all duration-500">
+              <div className="mb-8">
+                 <span className="text-[10px] font-medium text-[var(--accent)] uppercase tracking-[0.2em]">{program.target}</span>
+                 <h3 className="font-serif text-4xl text-white mt-4 mb-6">{program.name}</h3>
+                 <p className="text-white/50 leading-relaxed text-lg">{program.desc}</p>
               </div>
-              <div className="mt-auto pt-8 border-t border-white/5">
-                <p className="text-sm text-white/40 mb-4 uppercase tracking-wide">Outcome: <span className="text-white/80 normal-case">{program.outcome}</span></p>
+              <div className="mt-auto pt-10 border-t border-white/[0.05]">
                 <Button variant={program.variant} fullWidth>{program.cta}</Button>
               </div>
             </div>
@@ -119,26 +115,24 @@ function ProgramOptions() {
 
 function ValueStack() {
   const items = [
-    "Structured training plans designed for progression",
-    "Access to the Lipsett Fitness App features",
-    "Ongoing updates and new program drops",
-    "Guidance on nutrition and macronutrients",
-    "Mindset resources to build discipline",
-    "Community access for support and accountability"
+    "Structured training plans",
+    "Lipsett Fitness App access",
+    "Ongoing program updates",
+    "Nutrition guidance",
+    "Mindset resources",
+    "Community accountability"
   ];
 
   return (
-    <section className="py-20 bg-[#080808] border-y border-white/5">
+    <section className="py-32 bg-[#050505] border-y border-white/[0.03]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-12">What You Get</h2>
-          <div className="grid md:grid-cols-2 gap-y-4 gap-x-12">
+          <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">What You Get</h2>
+          <div className="grid md:grid-cols-2 gap-y-6 gap-x-12">
             {items.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <div className="mt-1 w-5 h-5 rounded-full bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3 h-3 text-[var(--accent)]" />
-                </div>
-                <span className="text-white/80">{item}</span>
+              <div key={item} className="flex items-center gap-4 group">
+                <div className="w-1 h-1 bg-white/20 rounded-full group-hover:bg-[var(--accent)] transition-colors" />
+                <span className="text-white/60 text-lg group-hover:text-white transition-colors">{item}</span>
               </div>
             ))}
           </div>
@@ -150,20 +144,20 @@ function ValueStack() {
 
 function Testimonials() {
   const reviews = [
-    { text: "The structure I needed to finally break through my plateau. The accountability is unmatched.", author: "David K." },
-    { text: "Rob's approach is science-based and sustainable. I stepped on stage looking my best ever.", author: "Sarah M." },
-    { text: "I've added significant size while staying lean. The programming adapts to my schedule.", author: "James L." }
+    { text: "The structure I needed to finally break through my plateau.", author: "David K." },
+    { text: "Science-based and sustainable. Best shape of my life.", author: "Sarah M." },
+    { text: "Added significant size while staying lean.", author: "James L." }
   ];
 
   return (
-    <section className="py-24 bg-background overflow-hidden">
+    <section className="py-32 bg-background overflow-hidden border-b border-white/[0.03]">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">Real People. Real Progress.</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-24">Real Progress</h2>
+        <div className="grid md:grid-cols-3 gap-12">
           {reviews.map((review, i) => (
-            <div key={i} className="bg-white/5 p-8 border border-white/5">
-              <p className="text-white/80 italic mb-6 leading-relaxed">"{review.text}"</p>
-              <p className="font-serif text-[var(--accent)]">{review.author}</p>
+            <div key={i} className="group p-8 border-l border-white/10 hover:border-[var(--accent)] transition-colors duration-500 pl-8">
+              <p className="text-white/70 font-serif text-xl mb-6 leading-relaxed">"{review.text}"</p>
+              <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">{review.author}</p>
             </div>
           ))}
         </div>
@@ -174,23 +168,21 @@ function Testimonials() {
 
 function HowItWorks() {
   const steps = [
-    { num: "01", title: "Choose Your Program", desc: "Select 1:1 Coaching or App Access based on your needs." },
-    { num: "02", title: "Get Instant Access", desc: "Receive your plan and login details immediately." },
-    { num: "03", title: "Train With Purpose", desc: "Follow the structured workouts and track your progress." },
-    { num: "04", title: "See Results", desc: "Build consistency and transform your physique." }
+    { num: "01", title: "Choose", desc: "Select Coaching or App." },
+    { num: "02", title: "Access", desc: "Get your plan instantly." },
+    { num: "03", title: "Train", desc: "Follow the structure." },
+    { num: "04", title: "Transform", desc: "Build consistency." }
   ];
 
   return (
-    <section className="py-20 bg-[#050505]">
+    <section className="py-32 bg-[#050505]">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">How It Works</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-8 border-t border-white/[0.05] pt-12">
           {steps.map((step) => (
-            <div key={step.num} className="relative pl-8 border-l border-white/10">
-              <span className="absolute -left-[11px] top-0 w-5 h-5 bg-[#050505] border border-[var(--accent)] rounded-full" />
-              <span className="text-xs font-mono text-[var(--accent)] mb-2 block">{step.num}</span>
-              <h3 className="font-serif text-lg text-white mb-2">{step.title}</h3>
-              <p className="text-sm text-white/50">{step.desc}</p>
+            <div key={step.num} className="group">
+              <span className="text-[10px] font-mono text-white/20 mb-4 block tracking-[0.2em] group-hover:text-[var(--accent)] transition-colors">{step.num}</span>
+              <h3 className="font-serif text-xl text-white mb-2">{step.title}</h3>
+              <p className="text-sm text-white/40">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -201,22 +193,22 @@ function HowItWorks() {
 
 function FAQ() {
   const faqs = [
-    { q: "Who is this for?", a: "Anyone from beginners to advanced athletes looking for structured, science-based training." },
-    { q: "What level do I need to be?", a: "Programs are adaptable to all fitness levels, with scalability built in." },
-    { q: "How long do I get access?", a: "App subscriptions are monthly or yearly. Coaching is duration-based as agreed." },
-    { q: "Can I train at home?", a: "Yes, the app includes home workout options with minimal equipment." },
-    { q: "Is nutrition included?", a: "Yes, both the app and coaching provide nutrition guidance and macro tracking." }
+    { q: "Who is this for?", a: "Beginners to advanced athletes seeking structure." },
+    { q: "What level do I need to be?", a: "Scalable to all levels." },
+    { q: "How long do I get access?", a: "Monthly or yearly options available." },
+    { q: "Can I train at home?", a: "Yes. Home options included." },
+    { q: "Is nutrition included?", a: "Yes. Guidance and tracking provided." }
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-12">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">Questions</h2>
+        <div className="space-y-6">
           {faqs.map((faq, i) => (
-            <div key={i} className="border border-white/10 p-6 bg-white/5">
-              <h3 className="font-medium text-white mb-2">{faq.q}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
+            <div key={i} className="border-b border-white/[0.05] pb-6 group">
+              <h3 className="font-medium text-white mb-2 group-hover:text-white/80 transition-colors">{faq.q}</h3>
+              <p className="text-white/40 text-sm">{faq.a}</p>
             </div>
           ))}
         </div>
@@ -227,12 +219,12 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="py-24 bg-[#0a0a0a] border-t border-white/5 text-center">
+    <section className="py-32 bg-[#0a0a0a] border-t border-white/[0.03] text-center">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-4xl md:text-5xl text-white mb-8">Start Training with Purpose</h2>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <h2 className="font-serif text-4xl md:text-6xl text-white mb-8">Start Training.</h2>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Button variant="primary" size="lg">Join the Program</Button>
-          <Button variant="ghost" size="lg">Need Help Choosing?</Button>
+          <a href="/coaching" className="text-white/40 text-xs uppercase tracking-[0.2em] hover:text-white transition-colors">Need Help Choosing?</a>
         </div>
       </div>
     </section>

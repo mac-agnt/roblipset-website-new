@@ -27,6 +27,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased bg-background text-foreground`}
       >
+        <div className="bg-noise" />
         {children}
       </body>
     </html>

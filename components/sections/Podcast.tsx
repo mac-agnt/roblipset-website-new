@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/Button";
+import { PerformanceModule } from "@/components/ui/PerformanceModule";
 import { Mic, Play } from "lucide-react";
+import Image from "next/image";
 
 export function Podcast() {
   const episodes = [
@@ -9,30 +11,40 @@ export function Podcast() {
   ];
 
   return (
-    <section className="py-24 bg-background border-b border-white/5">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+    <section className="py-32 bg-background border-t border-white/5 relative">
+      <div className="absolute inset-0 bg-gradient-spotlight opacity-20" />
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
           
-          <div className="md:w-1/2 space-y-8">
-            <h2 className="font-serif text-3xl md:text-5xl text-white leading-tight">
-              The Rob Lipsett <br /> Podcast
+          <div className="md:w-1/2 space-y-10">
+            <h2 className="font-serif text-4xl md:text-6xl text-foreground leading-[0.9]">
+              The Rob Lipsett <br /> Podcast.
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed">
-              Weekly interviews with the most influential minds on the planet, covering fitness, business, and mindset.
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-md text-pretty">
+              Interviews with the most influential minds. Fitness. Business. Mindset.
             </p>
             
-            <div className="space-y-4 pt-4">
-              {episodes.map((episode) => (
-                <div key={episode} className="flex items-center gap-4 p-4 bg-white/5 border border-white/5 hover:border-[var(--accent)] transition-colors group cursor-pointer">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[var(--accent)] transition-colors">
-                    <Play className="w-4 h-4 text-white group-hover:text-black ml-1" />
-                  </div>
-                  <span className="text-white/80 group-hover:text-white transition-colors">{episode}</span>
-                </div>
+            <div className="space-y-4 pt-6">
+              {episodes.map((episode, i) => (
+                <PerformanceModule
+                  key={episode}
+                  label={`EPISODE ${i + 1}`}
+                  title={episode}
+                  className="p-6 md:p-6"
+                  action={
+                    <div className="flex items-center gap-2 text-[var(--accent)] text-xs font-medium tracking-widest uppercase mt-2 group-hover:text-white transition-colors">
+                      <div className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] transition-all">
+                        <Play className="w-2 h-2 fill-current" />
+                      </div>
+                      Play Episode
+                    </div>
+                  }
+                />
               ))}
             </div>
 
-            <div className="pt-4">
+            <div className="pt-6">
                <Button variant="outline" size="lg">
                 Listen Now
               </Button>
@@ -40,11 +52,18 @@ export function Podcast() {
           </div>
 
           <div className="md:w-1/2 relative flex justify-center">
-            {/* Visual representation of a mic or podcast art */}
-             <div className="relative z-10 w-full max-w-md aspect-square bg-neutral-900 border border-white/10 flex items-center justify-center overflow-hidden">
-                <Mic className="w-32 h-32 text-white/5" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent" />
-                <span className="absolute bottom-8 left-8 text-white/20 font-serif text-4xl">The Game Plan</span>
+             <div className="relative z-10 w-full max-w-sm aspect-square bg-[var(--panel)] border border-white/5 flex items-center justify-center overflow-hidden shadow-[inset_0_1px_0_0_rgba(255,255,255,0.02)] hover:border-white/10 transition-colors duration-500">
+                <div className="absolute top-0 left-0 right-0 h-px bg-white/5 opacity-50 z-20" />
+                
+                <Image
+                  src="/game-plan-podcast.png"
+                  alt="The Game Plan Podcast"
+                  fill
+                  className="object-cover"
+                />
+                
+                {/* Subtle overlay for cinematic integration */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent z-10" />
              </div>
           </div>
 

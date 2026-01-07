@@ -9,19 +9,19 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", fullWidth, ...props }, ref) => {
-    const baseStyles = "inline-flex items-center justify-center rounded-none font-medium transition-colors duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none tracking-[0.2em] uppercase text-xs md:text-sm";
+    const baseStyles = "relative inline-flex items-center justify-center rounded-none font-medium transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none tracking-[0.25em] uppercase text-[10px] md:text-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] hover:-translate-y-px active:translate-y-0";
     
     const variants = {
-      primary: "bg-[var(--accent)] text-black hover:bg-[#c5a028]",
-      secondary: "bg-transparent border border-white/20 text-white hover:border-white/40 hover:bg-white/5",
-      outline: "bg-transparent border border-white/20 text-white hover:border-white/40 hover:bg-white/5", // Mapping outline to secondary style
-      ghost: "text-white/60 hover:text-white bg-transparent p-0 hover:bg-transparent h-auto", // True text link
+      primary: "bg-[var(--accent)] text-black hover:bg-[var(--accent-hover)] shadow-none",
+      secondary: "bg-[var(--panel)] border border-white/5 text-foreground hover:border-white/10 hover:bg-white/5",
+      outline: "bg-transparent border border-white/10 text-foreground hover:border-white/20 hover:bg-white/5",
+      ghost: "text-muted-foreground hover:text-foreground bg-transparent p-0 hover:bg-transparent h-auto shadow-none hover:translate-y-0 tracking-[0.2em]",
     };
 
     const sizes = {
-      sm: "h-10 px-6",
-      md: "h-12 px-8",
-      lg: "h-14 px-10",
+      sm: "h-9 px-5",
+      md: "h-11 px-7",
+      lg: "h-12 px-9",
     };
 
     const widthClass = fullWidth ? "w-full" : "";

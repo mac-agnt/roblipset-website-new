@@ -23,22 +23,21 @@ function CoachingHero() {
     <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-background">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] via-[#0a0a0a] to-[#000000] opacity-95" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
+        <div className="bg-noise" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-8">
-          <h1 className="font-serif text-4xl md:text-6xl text-white leading-tight">
-            Personal Coaching with <br />
-            <span className="text-[var(--accent)]">Rob Lipsett</span>
+          <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.9] tracking-tight">
+            Personal Coaching. <br />
+            <span className="text-white/40">The Inner Circle.</span>
           </h1>
-          <p className="font-sans text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-            This is fully personalised, high-touch coaching for individuals ready for structured guidance. 
-            I work with a limited number of clients to ensure direct focus and long-term progression.
+          <p className="font-sans text-lg text-white/50 max-w-lg mx-auto leading-relaxed text-pretty">
+            High-touch. Selective. Designed for those ready to commit entirely to the process.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <Button variant="primary" size="lg">Apply for Coaching</Button>
-            <Button variant="ghost" size="lg">Is This Right for Me?</Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
+            <Button variant="primary" size="lg">Apply Now</Button>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 pt-4 sm:pt-0">Limited Availability</span>
           </div>
         </div>
       </div>
@@ -48,48 +47,44 @@ function CoachingHero() {
 
 function FitSection() {
   return (
-    <section className="py-24 bg-[#050505] border-b border-white/5">
+    <section className="py-32 bg-[#050505] border-b border-white/[0.03]">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">
-          Is 1:1 Coaching Right for You?
+        <h2 className="font-serif text-3xl md:text-5xl text-white text-center mb-24">
+          Who is this for?
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
           {/* For You Column */}
-          <div className="bg-white/5 border border-white/10 p-10">
-            <h3 className="font-serif text-2xl text-white mb-8">This is for you if:</h3>
+          <div className="bg-[#0a0a0a] border border-white/[0.05] p-12">
+            <h3 className="font-serif text-3xl text-white mb-10">The Committed</h3>
             <ul className="space-y-6">
               {[
-                "You want clear structure and accountability",
-                "You are serious about long-term progress",
-                "You are willing to follow a proven system",
-                "You value direct feedback and adjustments"
+                "Demands structure and accountability",
+                "Focused on long-term progression",
+                "Follows the system without deviation",
+                "Values direct, honest feedback"
               ].map((item) => (
-                <li key={item} className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-[var(--accent)]" />
-                  </div>
-                  <span className="text-white/80 leading-relaxed">{item}</span>
+                <li key={item} className="flex items-center gap-4 group">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] group-hover:scale-125 transition-transform" />
+                  <span className="text-white/80 text-lg leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Not For You Column */}
-          <div className="bg-white/5 border border-white/10 p-10 opacity-75">
-            <h3 className="font-serif text-2xl text-white/60 mb-8">This is NOT for you if:</h3>
+          <div className="bg-[#0a0a0a] border border-white/[0.05] p-12 opacity-50 hover:opacity-100 transition-opacity duration-500">
+            <h3 className="font-serif text-3xl text-white mb-10">The Casual</h3>
             <ul className="space-y-6">
               {[
-                "You are looking for shortcuts or quick fixes",
-                "You want motivation without taking action",
-                "You are not ready to commit to the process",
-                "You are unwilling to track your progress"
+                "Looking for quick fixes",
+                "Motivation without discipline",
+                "Unwilling to track metrics",
+                "Not ready to invest in themselves"
               ].map((item) => (
-                <li key={item} className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <X className="w-3.5 h-3.5 text-red-500/60" />
-                  </div>
-                  <span className="text-white/60 leading-relaxed">{item}</span>
+                <li key={item} className="flex items-center gap-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                  <span className="text-white/60 text-lg leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -102,24 +97,24 @@ function FitSection() {
 
 function Inclusions() {
   const inclusions = [
-    { title: "Personalised Guidance", desc: "Training and nutrition protocols designed specifically for your body and goals." },
-    { title: "Direct Access", desc: "Direct communication for questions, form checks, and support when you need it." },
-    { title: "Structured Approach", desc: "A clear roadmap for your progression, removing guesswork from your routine." },
-    { title: "Ongoing Support", desc: "Regular check-ins and adjustments to keep you on track and breaking plateaus." }
+    { title: "Personalised Guidance", desc: "Protocols designed for your unique physiology." },
+    { title: "Direct Access", desc: "Communication when you need it." },
+    { title: "Structured Approach", desc: "A clear roadmap. No guesswork." },
+    { title: "Ongoing Support", desc: "Adjustments to break plateaus." }
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">What's Included</h2>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
+          <h2 className="font-serif text-3xl md:text-5xl text-white text-center mb-24">The Standard</h2>
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-16">
             {inclusions.map((item) => (
-              <div key={item.title} className="flex gap-6">
-                 <div className="w-12 h-1 bg-[var(--accent)] mt-3 flex-shrink-0" />
+              <div key={item.title} className="group">
+                 <div className="w-8 h-[1px] bg-[var(--accent)] mb-6 group-hover:w-16 transition-all duration-500" />
                  <div>
-                   <h3 className="font-serif text-xl text-white mb-3">{item.title}</h3>
-                   <p className="text-white/60 leading-relaxed">{item.desc}</p>
+                   <h3 className="font-serif text-2xl text-white mb-4">{item.title}</h3>
+                   <p className="text-white/50 text-lg leading-relaxed">{item.desc}</p>
                  </div>
               </div>
             ))}
@@ -132,18 +127,18 @@ function Inclusions() {
 
 function ClientResults() {
   return (
-    <section className="py-24 bg-[#080808] border-y border-white/5">
+    <section className="py-32 bg-[#080808] border-y border-white/[0.03]">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">Client Results</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <h2 className="font-serif text-3xl md:text-5xl text-white text-center mb-24">Outcomes</h2>
+        <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {[
-            { quote: "I never knew what true structure was until this. The results speak for themselves.", name: "Mark T." },
-            { quote: "Professional, detailed, and actually cares about your progress. Worth every penny.", name: "Emma R." },
-            { quote: "Finally broke through a 2-year plateau. Rob's adjustments made all the difference.", name: "Jason L." }
+            { quote: "I never knew what true structure was until this.", name: "Mark T." },
+            { quote: "Professional, detailed, and actually cares.", name: "Emma R." },
+            { quote: "Finally broke through a 2-year plateau.", name: "Jason L." }
           ].map((result, i) => (
-            <div key={i} className="bg-white/5 p-8 border border-white/5">
-              <p className="text-white/80 italic text-lg mb-6 leading-relaxed">"{result.quote}"</p>
-              <p className="font-serif text-[var(--accent)]">{result.name}</p>
+            <div key={i} className="group p-8 border-l border-white/10 hover:border-[var(--accent)] transition-colors duration-500 pl-8">
+              <p className="text-white/80 font-serif text-2xl mb-8 leading-relaxed">"{result.quote}"</p>
+              <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">{result.name}</p>
             </div>
           ))}
         </div>
@@ -154,21 +149,21 @@ function ClientResults() {
 
 function Process() {
   const steps = [
-    { num: "01", title: "Submit Application", desc: "Fill out the detailed application form so I can understand your goals and starting point." },
-    { num: "02", title: "Review & Approval", desc: "I review every application personally to ensure we are a good fit for working together." },
-    { num: "03", title: "Begin Coaching", desc: "If approved, we start with your onboarding and initial plan design immediately." }
+    { num: "01", title: "Apply", desc: "Submit your details." },
+    { num: "02", title: "Review", desc: "I assess fit personally." },
+    { num: "03", title: "Begin", desc: "Onboarding starts immediately." }
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">How It Works</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <h2 className="font-serif text-3xl md:text-5xl text-white text-center mb-24">The Process</h2>
+        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto border-t border-white/[0.05] pt-12">
           {steps.map((step) => (
-            <div key={step.num} className="relative pt-8 border-t border-white/10 group hover:border-[var(--accent)] transition-colors duration-500">
-              <span className="text-xs font-mono text-[var(--accent)] mb-4 block tracking-widest">{step.num}</span>
-              <h3 className="font-serif text-xl text-white mb-4">{step.title}</h3>
-              <p className="text-white/60 leading-relaxed">{step.desc}</p>
+            <div key={step.num} className="group">
+              <span className="text-[10px] font-mono text-white/20 mb-6 block tracking-[0.2em] group-hover:text-[var(--accent)] transition-colors">{step.num}</span>
+              <h3 className="font-serif text-3xl text-white mb-4">{step.title}</h3>
+              <p className="text-white/50 text-lg leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -179,12 +174,12 @@ function Process() {
 
 function FinalCTA() {
   return (
-    <section className="py-24 bg-[#0a0a0a] border-t border-white/5 text-center">
+    <section className="py-32 bg-[#0a0a0a] border-t border-white/[0.03] text-center">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto space-y-8">
-          <h2 className="font-serif text-4xl md:text-5xl text-white">Apply for 1:1 Coaching</h2>
-          <p className="text-white/60">
-            Availability is limited to ensure quality. If you are ready to commit to the process, I invite you to apply.
+        <div className="max-w-2xl mx-auto space-y-10">
+          <h2 className="font-serif text-5xl md:text-7xl text-white leading-[0.9]">Apply.</h2>
+          <p className="text-white/50 text-lg">
+            Commit to the standard.
           </p>
           <div className="pt-4">
             <Button variant="primary" size="lg" className="min-w-[200px]">Apply Now</Button>

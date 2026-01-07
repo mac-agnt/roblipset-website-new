@@ -1,54 +1,132 @@
-import { Button } from "@/components/ui/Button";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   const pillars = ["Physique", "Nutrition", "Mindset"];
 
   return (
-    <section className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-background">
-      {/* Background & Effects */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#000000] opacity-95" />
-        <div className="bg-noise" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
+    <section className="relative h-screen min-h-[900px] flex items-center justify-center overflow-hidden">
+      
+      {/* === BACKGROUND STACK === */}
+      
+      {/* 0. Base Fallback */}
+      <div className="absolute inset-0 bg-[#080808] z-0" />
+
+      {/* 1. Background Video (Cinematic Layer) */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.35] pointer-events-none z-0"
+      >
+        <source src="/backgrounds/hero-background.mp4" type="video/mp4" />
+      </video>
+      
+      {/* 2. Dark Overlay (Contrast Control) */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
+      
+      {/* 3. Subtle Vignette */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          background: 'radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0,0,0,0.6) 100%)'
+        }}
+      />
+
+      {/* === ROB - PRIMARY VISUAL ANCHOR === */}
+      <div 
+        className="absolute bottom-0 left-1/2 z-10 h-[100vh] w-auto pointer-events-none select-none"
+        style={{ transform: 'translateX(-42%)' }}
+      >
+        <Image
+          src="/rob-hero.png"
+          alt="Rob Lipsett"
+          width={1100}
+          height={1650}
+          className="h-full w-auto object-contain object-bottom"
+          priority
+        />
+        {/* Bottom fade into background */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] via-[#080808]/50 to-transparent" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6 h-full flex flex-col md:flex-row items-center">
+      {/* === CONTENT LAYER === */}
+      <div className="relative z-20 container mx-auto px-4 md:px-8 lg:px-12 h-full flex items-center justify-between">
         
         {/* Left Content */}
-        <div className="flex-1 text-center md:text-left pt-20 md:pt-0 space-y-10 md:space-y-12 z-20">
-          <h5 className="text-[var(--accent)] font-medium tracking-[0.2em] uppercase text-xs animate-fade-in">
-            Coach. Athlete. Mentor.
-          </h5>
+        <div className="flex-1 md:max-w-xl space-y-14 z-30">
           
-          <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.9] text-white tracking-tight text-balance">
+          {/* Headline - Larger, More Breathing Room */}
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-[6rem] xl:text-[6.5rem] leading-[1.05] text-foreground tracking-[-0.02em]">
             Build the body. <br />
             Build the mindset. <br />
-            <span className="italic text-white/80">Build the life.</span>
+            <span className="text-foreground/20 block mt-4">Build the life.</span>
           </h1>
           
-          <p className="font-sans text-lg text-white/60 max-w-lg leading-relaxed hidden md:block text-pretty">
-            I help driven individuals master their physique and mindset through proven, science-based coaching strategies.
-          </p>
+          {/* CTA + Brand Stamps */}
+          <div className="space-y-12">
+            
+            {/* Primary CTA - Calm Presence */}
+            <Link 
+              href="/programs"
+              className="inline-flex items-center justify-center h-10 px-8 text-[10px] font-medium uppercase tracking-[0.2em] bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-black transition-colors duration-300"
+            >
+              Start Training
+            </Link>
+            
+            {/* Brand Logos - Stamps - Strict Optical Alignment */}
+            <div className="flex items-end gap-8 opacity-[0.18] grayscale select-none pointer-events-none">
+              
+              {/* Gymshark - Wide wordmark */}
+              <div className="relative h-[14px] w-[90px]">
+                <Image
+                  src="/GymsharkLogo.png"
+                  alt="Gymshark"
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
-          <div className="flex flex-col sm:flex-row items-center md:items-start gap-8 pt-6">
-            <Button variant="primary" size="lg" className="min-w-[200px]">
-              Start Your Journey
-            </Button>
-            <a href="/programs" className="group flex items-center gap-2 text-white/60 hover:text-white transition-colors uppercase tracking-[0.2em] text-xs font-medium">
-              Explore Programs <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+              {/* Alphalete - Condensed wordmark */}
+              <div className="relative h-[11px] w-[72px]">
+                <Image
+                  src="/alphaletelogo.png"
+                  alt="Alphalete"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Fuel Cakes - Badge/icon shape */}
+              <div className="relative h-[22px] w-[44px]">
+                <Image
+                  src="/fuelcakes.png"
+                  alt="Fuel Cakes"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Ghost - Wide wordmark */}
+              <div className="relative h-[14px] w-[70px]">
+                <Image
+                  src="/ghostlogo.png"
+                  alt="Ghost"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+            </div>
           </div>
         </div>
 
-        {/* Right Pillars */}
-        <div className="hidden md:flex flex-col justify-center gap-16 text-right absolute right-8 top-1/2 -translate-y-1/2 z-20">
+        {/* Right Pillars - Context Only */}
+        <div className="hidden lg:flex flex-col justify-center gap-14 text-right z-30">
           {pillars.map((pillar) => (
-            <div key={pillar} className="group cursor-pointer">
-              <span className="block text-[10px] text-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 mb-2 tracking-[0.25em] uppercase">
-                Explore
-              </span>
-              <span className="text-xl font-serif text-white/30 group-hover:text-white transition-colors duration-500 tracking-wide">
+            <div key={pillar} className="pr-2">
+              <span className="text-[10px] font-sans text-foreground/15 tracking-[0.25em] block uppercase">
                 {pillar}
               </span>
             </div>

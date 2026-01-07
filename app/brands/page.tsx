@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Button } from "@/components/ui/Button";
 import { ArrowUpRight } from "lucide-react";
 
 export default function BrandsPage() {
@@ -17,19 +16,19 @@ export default function BrandsPage() {
 
 function BrandsHero() {
   return (
-    <section className="relative py-32 flex items-center justify-center overflow-hidden bg-background border-b border-white/5">
+    <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-background border-b border-white/[0.03]">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-[#151515] via-[#050505] to-[#000000] opacity-95" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
+        <div className="bg-noise" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
-          <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight">
-            Brands Rob Works With
+          <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.9] tracking-tight">
+            Trusted Partners.
           </h1>
-          <p className="font-sans text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-            I only partner with brands that align with my values and that I use daily as part of my own routine.
+          <p className="font-sans text-lg text-white/50 max-w-xl mx-auto leading-relaxed text-pretty">
+            Aligned with my values. Essential to my routine.
           </p>
         </div>
       </div>
@@ -41,23 +40,23 @@ function BrandList() {
   const brands = [
     {
       name: "Alphalete",
-      desc: "Premium fitness wear built for performance and lifestyle, designed to withstand rigorous training while looking sharp.",
+      desc: "Premium fitness wear built for performance and lifestyle.",
       link: "https://alphaleteathletics.com",
-      cta: "Shop with Code ROB",
+      cta: "Shop Alphalete",
       logoText: "ALPHALETE"
     },
     {
       name: "Fuel Cakes",
-      desc: "Convenient, high-protein mug cakes that provide a nutritious option for satisfying cravings without compromising goals.",
+      desc: "Convenient, high-protein mug cakes.",
       link: "https://fuelcakes.com",
-      cta: "Explore Brand",
+      cta: "Explore Fuel Cakes",
       logoText: "FUEL CAKES"
     },
     {
       name: "Ghost",
-      desc: "Lifestyle sports nutrition products that deliver transparency in labeling and effective formulas for training support.",
+      desc: "Lifestyle sports nutrition.",
       link: "https://www.ghostlifestyle.com",
-      cta: "Shop with Code ROB",
+      cta: "Shop Ghost",
       logoText: "GHOST"
     }
   ];
@@ -65,20 +64,18 @@ function BrandList() {
   return (
     <section className="bg-background">
       {brands.map((brand, index) => (
-        <div key={brand.name} className={`py-24 border-b border-white/5 ${index % 2 === 0 ? 'bg-[#050505]' : 'bg-background'}`}>
+        <div key={brand.name} className={`py-32 border-b border-white/[0.03] ${index % 2 === 0 ? 'bg-[#050505]' : 'bg-background'}`}>
           <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-16 max-w-5xl mx-auto">
               {/* Logo / Brand Visual Placeholder */}
-              <div className="w-full md:w-1/3 flex justify-center">
-                <div className="w-64 h-32 flex items-center justify-center border border-white/10 bg-white/5">
-                  <span className="font-serif text-2xl tracking-widest text-white/80 uppercase">{brand.logoText}</span>
-                </div>
+              <div className="w-full md:w-1/3 flex justify-center md:justify-end">
+                <span className="font-serif text-4xl tracking-widest text-white/20 uppercase">{brand.logoText}</span>
               </div>
               
               {/* Content */}
               <div className="w-full md:w-2/3 text-center md:text-left space-y-6">
                 <h2 className="font-serif text-3xl text-white">{brand.name}</h2>
-                <p className="text-white/60 leading-relaxed text-lg max-w-xl">
+                <p className="text-white/50 leading-relaxed text-lg max-w-md mx-auto md:mx-0">
                   {brand.desc}
                 </p>
                 <div className="pt-2">
@@ -86,9 +83,9 @@ function BrandList() {
                     href={brand.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-[var(--accent)] hover:text-white transition-colors uppercase tracking-widest text-sm font-medium"
+                    className="inline-flex items-center text-[var(--accent)] hover:text-white transition-colors uppercase tracking-[0.2em] text-xs font-medium"
                   >
-                    {brand.cta} <ArrowUpRight className="ml-2 w-4 h-4" />
+                    {brand.cta} <ArrowUpRight className="ml-2 w-3 h-3" />
                   </a>
                 </div>
               </div>
@@ -102,11 +99,10 @@ function BrandList() {
 
 function TransparencyNote() {
   return (
-    <section className="py-16 bg-[#0a0a0a] border-t border-white/5">
+    <section className="py-16 bg-[#0a0a0a]">
       <div className="container mx-auto px-4 text-center">
-        <p className="text-white/30 text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
-          Transparency Note: Some partnerships listed on this page may include affiliate codes or links. 
-          While I may earn a commission from these, my endorsement is always based on my independent use and belief in the product's quality.
+        <p className="text-white/20 text-[10px] uppercase tracking-[0.2em] max-w-2xl mx-auto leading-relaxed">
+          Transparency: Some partnerships include affiliate codes. My endorsement is always independent.
         </p>
       </div>
     </section>

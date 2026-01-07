@@ -1,47 +1,61 @@
-import React from "react";
-import { cn } from "@/lib/utils";
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
-  size?: "sm" | "md" | "lg";
-  fullWidth?: boolean;
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+        primary: "bg-[var(--accent)] text-black hover:bg-[var(--accent-hover)]",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+  fullWidth?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", size = "md", fullWidth, ...props }, ref) => {
-    const baseStyles = "relative inline-flex items-center justify-center rounded-none font-medium transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none tracking-[0.25em] uppercase text-[10px] md:text-xs shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] hover:-translate-y-px active:translate-y-0";
-    
-    const variants = {
-      primary: "bg-[var(--accent)] text-black hover:bg-[var(--accent-hover)] shadow-none",
-      secondary: "bg-[var(--panel)] border border-white/5 text-foreground hover:border-white/10 hover:bg-white/5",
-      outline: "bg-transparent border border-white/10 text-foreground hover:border-white/20 hover:bg-white/5",
-      ghost: "text-muted-foreground hover:text-foreground bg-transparent p-0 hover:bg-transparent h-auto shadow-none hover:translate-y-0 tracking-[0.2em]",
-    };
-
-    const sizes = {
-      sm: "h-9 px-5",
-      md: "h-11 px-7",
-      lg: "h-12 px-9",
-    };
-
-    const widthClass = fullWidth ? "w-full" : "";
-
+  ({ className, variant, size, asChild = false, fullWidth, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
     return (
-      <button
-        ref={ref}
+      <Comp
         className={cn(
-          baseStyles,
-          variants[variant],
-          sizes[size],
-          widthClass,
-          className
+          buttonVariants({ variant, size, className }),
+          fullWidth && "w-full"
         )}
+        ref={ref}
         {...props}
       />
-    );
+    )
   }
-);
+)
+Button.displayName = "Button"
 
-Button.displayName = "Button";
-
-export { Button };
+export { Button, buttonVariants }

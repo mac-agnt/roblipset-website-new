@@ -1,38 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 
 export function Hero() {
   const pillars = ["Physique", "Nutrition", "Mindset"];
 
   return (
-    <section className="relative h-screen min-h-[900px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen min-h-[900px] flex items-center justify-center overflow-hidden bg-[#080808]">
       
-      {/* === BACKGROUND STACK === */}
-      
-      {/* 0. Base Fallback */}
-      <div className="absolute inset-0 bg-[#080808] z-0" />
-
-      {/* 1. Background Video (Cinematic Layer) */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.35] pointer-events-none z-0"
-      >
-        <source src="/backgrounds/hero-background.mp4" type="video/mp4" />
-      </video>
-      
-      {/* 2. Dark Overlay (Contrast Control) */}
-      <div className="absolute inset-0 bg-black/60 z-0" />
-      
-      {/* 3. Subtle Vignette */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          background: 'radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0,0,0,0.6) 100%)'
-        }}
-      />
+      {/* === ANIMATED BACKGROUND PATHS === */}
+      <BackgroundPaths />
 
       {/* === ROB - PRIMARY VISUAL ANCHOR === */}
       <div 

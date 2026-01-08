@@ -34,12 +34,12 @@ export function Navbar() {
         isScrolled ? "bg-black/60 backdrop-blur-xl py-2" : "bg-black/30 backdrop-blur-md py-3"
       )}
     >
-      <nav className="container mx-auto px-6 grid grid-cols-[auto_1fr_auto] items-center h-10" aria-label="Primary navigation">
+      <nav className="container mx-auto px-6 grid grid-cols-[auto_1fr_auto] items-center" aria-label="Primary navigation">
         
-        {/* 1. Logo (Restrained, Optical Alignment) */}
-        <Link href="/" className="relative block h-10 w-40 opacity-90 hover:opacity-100 transition-opacity duration-300 justify-self-start">
+        {/* 1. Logo (Larger) */}
+        <Link href="/" className="relative block h-12 w-48 opacity-90 hover:opacity-100 transition-opacity duration-300 justify-self-start">
           <Image 
-            src="/logo-wordmark.svg" 
+            src="/rob-lipsett-logo.png" 
             alt="Rob Lipsett" 
             fill 
             className="object-contain object-left"

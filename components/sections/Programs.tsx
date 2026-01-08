@@ -64,8 +64,6 @@ export function Programs() {
               className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
             />
             {/* Cinematic Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-[#0e0e0e]/20 mix-blend-multiply" />
             <div className="absolute inset-0 opacity-[0.08] bg-[url('/noise.png')] pointer-events-none" />
             
             <div className="absolute top-6 left-6">

@@ -30,20 +30,21 @@ export function Navbar() {
   return (
     <header 
       className={cn(
-        "fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-300 ease-out rounded-full border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.4)]",
-        isScrolled ? "bg-black/60 backdrop-blur-xl py-2" : "bg-black/30 backdrop-blur-md py-3"
+        "fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-300 ease-out rounded-full border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_8px_32px_rgba(0,0,0,0.4)]",
+        isScrolled ? "bg-black/60 backdrop-blur-3xl md:backdrop-blur-xl py-2 md:py-2.5" : "bg-black/40 backdrop-blur-2xl md:backdrop-blur-md py-3 md:py-3.5"
       )}
     >
-      <nav className="container mx-auto px-6 grid grid-cols-[auto_1fr_auto] items-center" aria-label="Primary navigation">
+      <nav className="container mx-auto px-5 md:px-6 grid grid-cols-[auto_1fr_auto] items-center h-full" aria-label="Primary navigation">
         
         {/* 1. Logo (Larger) */}
-        <Link href="/" className="relative block h-12 w-48 opacity-90 hover:opacity-100 transition-opacity duration-300 justify-self-start">
+        <Link href="/" className="relative block h-9 w-36 md:h-12 md:w-48 opacity-90 hover:opacity-100 transition-opacity duration-300 justify-self-start">
           <Image 
             src="/rob-lipsett-logo.png" 
             alt="Rob Lipsett" 
             fill 
             className="object-contain object-left"
             priority
+            sizes="(max-width: 768px) 144px, 192px"
           />
         </Link>
 
@@ -75,7 +76,7 @@ export function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 

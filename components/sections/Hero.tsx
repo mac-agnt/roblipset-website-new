@@ -115,7 +115,7 @@ export function Hero() {
                 priority
                 className="w-auto max-w-none h-full object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 style={{ 
-                  maxHeight: '100%',
+                  maxHeight: '90%',
                   width: 'auto'
                 }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -25,9 +25,12 @@ export function TrustLogos() {
   ];
 
   return (
-    <section className="py-20 bg-[#0a0a0a] border-b border-white/[0.03]">
+    <section className="py-10 bg-[#080808] border-b border-white/5 md:hidden">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-center items-center gap-16 md:gap-32 opacity-40 grayscale mix-blend-screen">
+        <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/20 text-center mb-8">
+          Brand Partnerships
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 grayscale mix-blend-screen">
           {brands.map((brand) => (
             <div key={brand.name} className="relative flex items-center justify-center">
               <Image

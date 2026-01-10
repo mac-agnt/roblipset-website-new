@@ -8,32 +8,47 @@ export function Hero() {
   const pillars = ["Physique", "Nutrition", "Mindset"];
 
   return (
-    <section className="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#080808]">
+    <section className="relative min-h-0 md:min-h-[100dvh] flex flex-col justify-start md:justify-center overflow-hidden bg-[#080808]">
       
+      {/* === PREMIUM POLISH (MOBILE ONLY) === */}
+      <div className="absolute inset-0 z-0 pointer-events-none md:hidden mix-blend-overlay opacity-30 bg-noise" />
+      <div className="absolute inset-0 z-0 pointer-events-none md:hidden bg-gradient-spotlight opacity-40" />
+
       {/* === ANIMATED BACKGROUND PATHS (UNCHANGED) === */}
       <BackgroundPaths />
 
       {/* === HERO CONTENT GRID === */}
-      <div className="container relative z-10 mx-auto px-4 md:px-8 h-full flex flex-col justify-center flex-grow pt-20 md:pt-0">
+      <div className="container relative z-10 mx-auto px-4 md:px-8 h-full flex flex-col justify-start md:justify-center flex-grow pt-16 md:pt-0 pb-0">
         
         {/* Main Grid Container */}
         <div 
-          className="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-8 items-end md:items-center h-full"
-          style={{ minHeight: 'clamp(680px, 85vh, 900px)' }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-y-0 md:gap-8 items-start md:items-center h-full md:min-h-[85vh]"
         >
 
           {/* === LEFT ZONE: HEADLINE + LOGOS (5 cols) === */}
-          <div className="md:col-span-6 lg:col-span-5 flex flex-col justify-center gap-10 order-1 md:order-1 relative z-30 pb-12 md:pb-0">
+          <div className="md:col-span-6 lg:col-span-5 flex flex-col justify-center gap-2 md:gap-10 order-2 md:order-1 relative z-30 pb-0 md:pb-0 pointer-events-none md:pointer-events-auto">
             
             {/* Headline Stack - Forced 3 Lines */}
-            <h1 className="font-serif text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] tracking-tight text-white whitespace-nowrap">
-              <span className="block">Build the body.</span>
-              <span className="block">Build the mindset.</span>
-              <span className="block text-white/40">Build the life.</span>
-            </h1>
+            <div className="absolute left-0 bottom-[15vh] z-30 md:relative md:bottom-auto md:z-auto w-full px-4 text-left">
+              <h1 className="font-serif font-medium text-[2.15rem] leading-[1.0] tracking-tight text-white mb-3 md:text-[clamp(2.5rem,5vw,5rem)] md:leading-[1.05] md:mb-0 drop-shadow-lg md:drop-shadow-none whitespace-nowrap">
+                <span className="block">Build the body.</span>
+                <span className="block">Build the mindset.</span>
+                <span className="block text-white/40">Build the life.</span>
+              </h1>
 
-            {/* Brand Partnerships (Moved up, CTA removed) */}
-            <div className="space-y-6 pt-2">
+              {/* Mobile Pillars (Inline Row) - Moved here to close the gap */}
+              <div className="md:hidden flex justify-start items-center gap-2.5 opacity-90">
+                 {pillars.map((pillar, index) => (
+                    <span key={pillar} className="text-[0.65rem] font-sans font-medium tracking-[0.15em] uppercase text-white/70 flex items-center gap-2.5 drop-shadow-md">
+                      {pillar}
+                      {index < pillars.length - 1 && <span className="text-white/20 text-[0.5rem]">•</span>}
+                    </span>
+                  ))}
+              </div>
+            </div>
+
+            {/* Brand Partnerships (Hidden on mobile) */}
+            <div className="hidden md:block space-y-6 pt-2">
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/20 block">
                 Brand Partnerships
               </span>
@@ -89,9 +104,9 @@ export function Hero() {
           </div>
 
           {/* === CENTER ZONE: ROB IMAGE (4 cols) === */}
-          <div className="md:col-span-6 lg:col-span-4 relative h-full flex items-end justify-center order-2 md:order-2 pointer-events-none select-none">
+          <div className="relative w-full h-[90vh] md:h-full md:col-span-6 lg:col-span-4 flex items-end justify-center order-1 md:order-2 pointer-events-none select-none z-0 -mb-4 md:-mb-16 md:self-end">
             {/* Image Wrapper - Anchored to bottom */}
-            <div className="relative w-full h-[85%] flex items-end justify-center">
+            <div className="relative w-full h-full flex items-end justify-center z-10">
                <Image
                 src="/rob-hero.png"
                 alt="Rob Lipsett"
@@ -107,7 +122,7 @@ export function Hero() {
               />
             </div>
              {/* Gradient Fade for seamless bottom blend */}
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#080808] to-transparent z-20" />
+            <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#080808] via-[#080808]/60 to-transparent z-20 md:z-0" />
           </div>
 
           {/* === RIGHT ZONE: PILLAR LIST (3 cols) === */}
@@ -131,15 +146,38 @@ export function Hero() {
         </div>
       </div>
       
-      {/* Mobile Pillars (Visible only on small screens, bottom aligned) */}
-      <div className="lg:hidden container mx-auto px-4 pb-8 relative z-20 flex justify-center gap-8 md:gap-16 border-t border-white/5 pt-6 mt-auto">
-         {pillars.map((pillar) => (
-            <span key={pillar} className="text-[9px] font-mono tracking-[0.2em] uppercase text-white/30">
-              {pillar}
-            </span>
-          ))}
+
+      {/* Mobile Brand Ticker (Bottom Fixed) */}
+      <div className="absolute bottom-0 left-0 right-0 z-40 md:hidden overflow-hidden h-20 bg-gradient-to-t from-[#080808] to-transparent">
+        {/* Fades */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#080808] via-[#080808]/80 to-transparent z-20" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#080808] via-[#080808]/80 to-transparent z-20" />
+        
+        {/* Scrolling Track */}
+        <div className="flex w-full h-full items-end pb-5 overflow-hidden">
+          <div className="flex items-center gap-12 animate-infinite-scroll pl-4 whitespace-nowrap will-change-transform">
+            {/* Quadruple the logos for seamless loop (-25% translate) */}
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="flex items-center gap-10 shrink-0">
+                <div className="relative h-[36px] w-auto opacity-50 grayscale mix-blend-screen">
+                  <Image src="/GymsharkLogo.png" alt="Gymshark" height={72} width={360} className="h-full w-auto object-contain" />
+                </div>
+                <div className="relative h-[32px] w-auto opacity-50 grayscale mix-blend-screen">
+                  <Image src="/alphaletelogo.png" alt="Alphalete" height={64} width={384} className="h-full w-auto object-contain" />
+                </div>
+                <div className="relative h-[42px] w-auto opacity-50 grayscale mix-blend-screen">
+                  <Image src="/fuelcakes.png" alt="Fuel Cakes" height={84} width={168} className="h-full w-auto object-contain" />
+                </div>
+                <div className="relative h-[32px] w-auto opacity-50 grayscale mix-blend-screen">
+                  <Image src="/ghostlogo.png" alt="Ghost" height={64} width={256} className="h-full w-auto object-contain" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
     </section>
   );
 }
+

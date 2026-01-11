@@ -54,11 +54,11 @@ export function Hero() {
               </span>
               <div className="flex flex-nowrap items-center gap-6 md:gap-8 opacity-60 grayscale mix-blend-screen overflow-x-auto md:overflow-visible pb-2 md:pb-0 scrollbar-hide">
                 
-                {/* Gymshark */}
+                {/* Game Plan */}
                 <div className="relative h-[32px] md:h-[40px] w-auto shrink-0">
                   <Image
-                    src="/GymsharkLogo.png"
-                    alt="Gymshark"
+                    src="/game-plan.png"
+                    alt="Game Plan"
                     height={80}
                     width={400}
                     className="h-full w-auto object-contain"
@@ -115,7 +115,7 @@ export function Hero() {
                 priority
                 className="w-auto max-w-none h-full object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 style={{ 
-                  maxHeight: '90%',
+                  maxHeight: '98%',
                   width: 'auto'
                 }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -160,7 +160,7 @@ export function Hero() {
             {[...Array(4)].map((_, i) => (
               <div key={i} className="flex items-center gap-10 shrink-0">
                 <div className="relative h-[36px] w-auto opacity-50 grayscale mix-blend-screen">
-                  <Image src="/GymsharkLogo.png" alt="Gymshark" height={72} width={360} className="h-full w-auto object-contain" />
+                  <Image src="/game-plan.png" alt="Game Plan" height={72} width={360} className="h-full w-auto object-contain" />
                 </div>
                 <div className="relative h-[32px] w-auto opacity-50 grayscale mix-blend-screen">
                   <Image src="/alphaletelogo.png" alt="Alphalete" height={64} width={384} className="h-full w-auto object-contain" />

@@ -3,8 +3,8 @@ import Image from "next/image";
 export function TrustLogos() {
   const brands = [
     { 
-      name: "Gymshark", 
-      src: "/GymsharkLogo.png",
+      name: "Game Plan", 
+      src: "/game-plan.png",
       className: "h-10 md:h-12 w-auto" 
     },
     { 

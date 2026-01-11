@@ -84,7 +84,7 @@ function Philosophy() {
 }
 
 function Credibility() {
-  const brands = ["Alphalete", "Ghost", "Fuel Cakes", "Men's Health", "Gymshark"];
+  const brands = ["Alphalete", "Ghost", "Fuel Cakes", "Men's Health", "Game Plan"];
   
   return (
     <section className="py-32 bg-[#080808] border-y border-white/[0.03]">

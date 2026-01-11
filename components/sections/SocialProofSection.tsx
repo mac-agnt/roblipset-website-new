@@ -50,12 +50,12 @@ const CONFIG = {
     followers: "40.9K",
     likes: "570.5K",
     videos: [
-      { views: "1.2M", pinned: true },
-      { views: "856K", pinned: true },
-      { views: "543K", pinned: false },
-      { views: "378K", pinned: false },
-      { views: "245K", pinned: false },
-      { views: "189K", pinned: false },
+      { src: "/tiktok_01.png", views: "1.2M", pinned: true },
+      { src: "/tiktok_02.png", views: "856K", pinned: true },
+      { src: "/tiktok_03.png", views: "543K", pinned: false },
+      { src: "/tiktok_04.png", views: "378K", pinned: false },
+      { src: "/tiktok_05.png", views: "245K", pinned: false },
+      { src: "/tiktok_06.png", views: "189K", pinned: false },
     ],
   },
   spotify: {
@@ -204,9 +204,9 @@ function InstagramMobilePanel() {
   ];
 
   return (
-    <div className="h-full flex flex-col bg-black text-white">
+    <div className="flex flex-col bg-black text-white">
        {/* Top Nav */}
-       <div className="px-4 py-2 flex items-center justify-between border-b border-white/10 shrink-0">
+       <div className="px-4 py-2 flex items-center justify-between border-b border-white/10">
           <div className="flex items-center gap-1">
              <span className="font-bold text-base">{handle}</span>
              <VerifiedBadge size="sm" />
@@ -221,7 +221,7 @@ function InstagramMobilePanel() {
        </div>
 
        {/* Profile Header */}
-       <div className="px-4 py-4 shrink-0">
+       <div className="px-4 py-4">
           <div className="flex items-center justify-between mb-4">
              <div className="relative w-20 h-20 rounded-full p-[2px] bg-gradient-to-tr from-[#cfa777] via-[#d9b15f] to-[#cfa777] shrink-0">
                <div className="w-full h-full rounded-full overflow-hidden border-2 border-black relative">
@@ -254,32 +254,30 @@ function InstagramMobilePanel() {
        </div>
 
        {/* Grid Tabs */}
-       <div className="flex border-t border-white/10 shrink-0">
+       <div className="flex border-t border-white/10">
           <div className="flex-1 py-2.5 border-b-2 border-white flex justify-center"><Grid3X3 className="w-6 h-6" /></div>
           <div className="flex-1 py-2.5 border-b-2 border-transparent flex justify-center"><Film className="w-6 h-6 text-white/40" /></div>
           <div className="flex-1 py-2.5 border-b-2 border-transparent flex justify-center"><Bookmark className="w-6 h-6 text-white/40" /></div>
        </div>
 
-       {/* 3-column Instagram Grid */}
-       <div className="flex-1 overflow-y-auto">
-          <div className="grid grid-cols-3 gap-[1px]">
-             {gridImages.map((post, i) => (
-               <div key={i} className="aspect-square bg-[#1a1a1a] relative group overflow-hidden">
-                  <Image 
-                    src={post.src} 
-                    alt={`Instagram post ${i + 1}`} 
-                    fill 
-                    className="object-cover" 
-                    sizes="(max-width: 768px) 33vw, 200px"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200 flex items-center justify-center">
-                     <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 text-white text-xs font-semibold">
-                        <Heart className="w-4 h-4 fill-white" /> {post.likes}
-                     </div>
+       {/* 3-column Instagram Grid - all 6 tiles visible */}
+       <div className="grid grid-cols-3 gap-[1px]">
+          {gridImages.map((post, i) => (
+            <div key={i} className="aspect-square bg-[#1a1a1a] relative group overflow-hidden">
+               <Image 
+                 src={post.src} 
+                 alt={`Instagram post ${i + 1}`} 
+                 fill 
+                 className="object-cover" 
+                 sizes="(max-width: 768px) 33vw, 200px"
+               />
+               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 text-white text-xs font-semibold">
+                     <Heart className="w-4 h-4 fill-white" /> {post.likes}
                   </div>
                </div>
-             ))}
-          </div>
+            </div>
+          ))}
        </div>
     </div>
   );
@@ -288,9 +286,9 @@ function InstagramMobilePanel() {
 function TikTokMobilePanel() {
   const { handle, name, following, followers, likes, videos } = CONFIG.tiktok;
   return (
-    <div className="h-full flex flex-col bg-black text-white">
+    <div className="flex flex-col bg-black text-white">
       {/* Top Nav */}
-      <div className="px-4 py-3 flex items-center justify-between border-b border-white/10 shrink-0">
+      <div className="px-4 py-3 flex items-center justify-between border-b border-white/10">
          <div className="w-8" />
          <div className="font-bold text-base flex items-center gap-1">
             {name} <div className="bg-[#cfa777] rounded-full w-3 h-3 flex items-center justify-center text-[8px] text-black">✓</div>
@@ -299,7 +297,7 @@ function TikTokMobilePanel() {
       </div>
 
       {/* Profile Info */}
-      <div className="flex flex-col items-center py-6 shrink-0">
+      <div className="flex flex-col items-center py-6">
          <div className="relative w-24 h-24 rounded-full border-2 border-white/20 mb-3">
              <Image src="/rob-hero.png" alt={handle} fill className="object-cover object-top rounded-full" />
          </div>
@@ -307,15 +305,15 @@ function TikTokMobilePanel() {
          
          <div className="flex items-center gap-6 mt-3 mb-4 text-center">
             <div>
-               <div className="font-bold text-lg">{following}</div>
+               <div className="font-bold text-lg text-white">{following}</div>
                <div className="text-xs text-white/60">Following</div>
             </div>
             <div>
-               <div className="font-bold text-lg">{followers}</div>
+               <div className="font-bold text-lg text-[#cfa777]">{followers}</div>
                <div className="text-xs text-white/60">Followers</div>
             </div>
             <div>
-               <div className="font-bold text-lg">{likes}</div>
+               <div className="font-bold text-lg text-[#cfa777]">{likes}</div>
                <div className="text-xs text-white/60">Likes</div>
             </div>
          </div>
@@ -327,23 +325,29 @@ function TikTokMobilePanel() {
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-white/10 shrink-0">
+      <div className="flex border-b border-white/10">
          <div className="flex-1 py-3 text-center text-sm font-semibold border-b-2 border-white">Videos</div>
          <div className="flex-1 py-3 text-center text-sm font-semibold text-white/40 border-b-2 border-transparent">Liked</div>
       </div>
 
-      {/* 3x2 Grid */}
-      <div className="flex-1 overflow-hidden">
-         <div className="grid grid-cols-3 gap-[1px]">
-            {videos.slice(0, 6).map((v, i) => (
-              <div key={i} className="aspect-[3/4] bg-[#1a1a1a] relative">
-                 {v.pinned && <div className="absolute top-1 left-1 bg-[#cfa777] text-black text-[8px] px-1 rounded-sm font-bold">Pinned</div>}
-                 <div className="absolute bottom-1 left-1 flex items-center gap-0.5 text-xs font-medium drop-shadow-md">
-                    <Play className="w-3 h-3 fill-white" /> {v.views}
-                 </div>
+      {/* 3x2 Grid - all 6 tiles visible */}
+      <div className="grid grid-cols-3 gap-[1px]">
+         {videos.slice(0, 6).map((v, i) => (
+           <div key={i} className="aspect-[9/16] bg-[#1a1a1a] relative overflow-hidden">
+              <Image 
+                src={v.src} 
+                alt={`TikTok video ${i + 1}`} 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 768px) 33vw, 150px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60" />
+              {v.pinned && <div className="absolute top-1 left-1 bg-[#cfa777] text-black text-[8px] px-1 rounded-sm font-bold z-10">Pinned</div>}
+              <div className="absolute bottom-1 left-1 flex items-center gap-0.5 text-xs font-medium drop-shadow-md z-10">
+                 <Play className="w-3 h-3 fill-white" /> {v.views}
               </div>
-            ))}
-         </div>
+           </div>
+         ))}
       </div>
     </div>
   );
@@ -355,12 +359,14 @@ function SpotifyMobilePanel() {
     <div className="h-full flex flex-col bg-gradient-to-b from-[#4a3f35] to-[#121212] text-white">
       {/* Header */}
       <div className="px-4 pt-8 pb-4 flex flex-col items-center shrink-0">
-         <div className="w-32 h-32 bg-gradient-to-br from-[#cfa777] to-[#8a6b4a] shadow-xl mb-4 flex items-center justify-center relative rounded-md">
-            <div className="text-center">
-              <div className="text-black/70 font-bold text-sm tracking-tight">THE</div>
-              <div className="text-black font-bold text-base tracking-tight">GAME</div>
-              <div className="text-black/70 font-bold text-sm tracking-tight">PLAN</div>
-            </div>
+         <div className="w-32 h-32 shadow-xl mb-4 relative rounded-md overflow-hidden">
+            <Image 
+              src="/game-plan-podcast.png" 
+              alt="The Game Plan Podcast cover" 
+              fill 
+              className="object-cover"
+              sizes="128px"
+            />
          </div>
          <h2 className="text-2xl font-bold text-center mb-1">{showTitle}</h2>
          <p className="text-[#cfa777] font-semibold text-sm mb-3">Podcast</p>
@@ -542,7 +548,7 @@ function InstagramPanel() {
   ];
 
   return (
-    <div className="h-full flex flex-col bg-[#000000]">
+    <div className="flex flex-col bg-[#000000]">
       {/* Top Bar - Compact */}
       <div className="px-3 py-2 flex items-center justify-between border-b border-white/10 shrink-0">
         <div className="flex items-center gap-1.5">
@@ -593,12 +599,12 @@ function InstagramPanel() {
         </button>
       </div>
 
-      {/* Photo Grid - Desktop: 3 cols, Mobile: 3x2 */}
-      <div className="flex-1 overflow-hidden">
-        {/* Desktop: Show all images */}
-        <div className="hidden lg:grid grid-cols-3 gap-[1px] h-full">
+      {/* Photo Grid - Desktop: 3 cols with 4:5 aspect, Mobile: 3x2 square */}
+      <div>
+        {/* Desktop: 4:5 aspect ratio tiles */}
+        <div className="hidden lg:grid grid-cols-3 gap-[1px]">
           {gridImages.map((post, i) => (
-            <button key={i} className="aspect-square bg-[#1a1a1a] relative overflow-hidden group">
+            <button key={i} className="aspect-[4/5] bg-[#1a1a1a] relative overflow-hidden group">
               <Image 
                 src={post.src} 
                 alt={`Instagram post ${i + 1}`} 
@@ -616,7 +622,7 @@ function InstagramPanel() {
             </button>
           ))}
         </div>
-        {/* Mobile: 3-col grid */}
+        {/* Mobile: square tiles */}
         <div className="lg:hidden grid grid-cols-3 gap-[1px]">
           {gridImages.map((post, i) => (
             <button key={i} className="aspect-square bg-[#1a1a1a] relative overflow-hidden group">
@@ -650,7 +656,7 @@ function TikTokPanel() {
   const { handle, name, following, followers, likes, videos } = CONFIG.tiktok;
 
   return (
-    <div className="h-full flex flex-col bg-[#000000]">
+    <div className="flex flex-col bg-[#000000]">
       {/* Desktop: Profile Header */}
       <div className="hidden lg:flex px-4 py-3 items-center gap-4 border-b border-white/10 shrink-0">
         <div className="relative w-14 h-14 shrink-0">
@@ -696,19 +702,25 @@ function TikTokPanel() {
         <button className="flex-1 py-2 text-white/40 text-xs font-semibold border-b border-transparent">Liked</button>
       </div>
 
-      {/* Video Grid - Always 3x2 (6 tiles) at all breakpoints */}
-      <div className="flex-1 overflow-hidden p-[1px]">
-        <div className="grid grid-cols-3 gap-[1px] h-full">
+      {/* Video Grid - 9:16 portrait tiles */}
+      <div className="p-[1px]">
+        <div className="grid grid-cols-3 gap-[1px]">
           {videos.slice(0, 6).map((video, i) => (
-            <button key={i} className="aspect-square bg-[#1a1a1a] relative overflow-hidden group">
+            <button key={i} className="aspect-[9/16] bg-[#1a1a1a] relative overflow-hidden group">
+              <Image 
+                src={video.src} 
+                alt={`TikTok video ${i + 1}`} 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 1024px) 33vw, 150px"
+              />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70" />
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent" />
               {video.pinned && (
-                <div className="absolute top-1.5 left-1.5 bg-[#cfa777] text-black text-[8px] font-bold px-1.5 py-0.5 rounded-sm">
+                <div className="absolute top-1.5 left-1.5 bg-[#cfa777] text-black text-[8px] font-bold px-1.5 py-0.5 rounded-sm z-10">
                   Pinned
                 </div>
               )}
-              <div className="absolute bottom-2 left-2 flex items-center gap-1">
+              <div className="absolute bottom-2 left-2 flex items-center gap-1 z-10">
                 <Play className="w-3 h-3 text-white fill-white" />
                 <span className="text-white text-[10px] font-medium">{video.views}</span>
               </div>
@@ -738,12 +750,14 @@ function SpotifyPanel() {
       {/* Show Header - Compact */}
       <div className="p-4 flex gap-4 border-b border-white/5 shrink-0">
         {/* Cover Art */}
-        <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-[#cfa777] to-[#8a6b4a] rounded-lg shrink-0 shadow-lg shadow-[#cfa777]/20 flex items-center justify-center relative overflow-hidden">
-          <div className="text-center relative z-10">
-            <div className="text-black/70 font-bold text-xs lg:text-sm tracking-tight">THE</div>
-            <div className="text-black font-bold text-sm lg:text-base tracking-tight">GAME</div>
-            <div className="text-black/70 font-bold text-xs lg:text-sm tracking-tight">PLAN</div>
-          </div>
+        <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-lg shrink-0 shadow-lg shadow-[#cfa777]/20 relative overflow-hidden">
+          <Image 
+            src="/game-plan-podcast.png" 
+            alt="The Game Plan Podcast cover" 
+            fill 
+            className="object-cover"
+            sizes="(max-width: 1024px) 80px, 96px"
+          />
         </div>
 
         {/* Show Info */}
@@ -800,7 +814,15 @@ function SpotifyPanel() {
       {/* Now Playing Bar - Compact */}
       <div className="p-3 bg-gradient-to-r from-[#181818] to-[#252525] border-t border-white/5 shrink-0">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-md bg-gradient-to-br from-[#cfa777] to-[#8a6b4a] shrink-0" />
+          <div className="w-10 h-10 rounded-md shrink-0 relative overflow-hidden">
+            <Image 
+              src="/game-plan-podcast.png" 
+              alt="The Game Plan Podcast cover" 
+              fill 
+              className="object-cover"
+              sizes="40px"
+            />
+          </div>
           <div className="flex-1 min-w-0">
             <p className="text-white text-[11px] font-medium truncate">Ep. 156: Building a Fitness Empire</p>
             <p className="text-white/40 text-[10px]">{author}</p>
@@ -845,25 +867,28 @@ function PlatformPanel({ activeId, isTransitioning }: { activeId: string; isTran
   };
 
   return (
-    <div className="relative w-full h-[85vh] md:h-[clamp(400px,50vh,520px)] lg:h-[clamp(480px,58vh,620px)] bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+    <div className="relative w-full md:h-[clamp(400px,50vh,520px)] lg:h-[clamp(480px,58vh,620px)] bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
       {/* Subtle inner glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-transparent pointer-events-none z-10" />
       
-      {/* Panel content with fade + translateY transition */}
+      {/* Desktop View - absolute positioning for fixed height */}
       <div
         className={cn(
-          "absolute inset-0 transition-all duration-[280ms] ease-out motion-reduce:transition-none",
+          "hidden lg:block absolute inset-0 transition-all duration-[280ms] ease-out motion-reduce:transition-none",
           isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
         )}
       >
-        {/* Desktop View */}
-        <div className="hidden lg:block h-full">
-           {desktopPanels[activeId]}
-        </div>
-        {/* Mobile View */}
-        <div className="lg:hidden h-full">
-           {mobilePanels[activeId]}
-        </div>
+        {desktopPanels[activeId]}
+      </div>
+      
+      {/* Mobile View - relative positioning for auto height */}
+      <div
+        className={cn(
+          "lg:hidden transition-all duration-[280ms] ease-out motion-reduce:transition-none",
+          isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+        )}
+      >
+        {mobilePanels[activeId]}
       </div>
     </div>
   );

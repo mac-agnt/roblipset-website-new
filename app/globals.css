@@ -179,3 +179,33 @@ p {
 .animate-infinite-scroll {
   animation: infinite-scroll 12s linear infinite;
 }
+
+/* Proof Ticker Animation (slower, premium feel) */
+@keyframes proof-ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-proof-ticker {
+  animation: proof-ticker 45s linear infinite;
+}
+
+.animate-proof-ticker:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-proof-ticker {
+    animation: none;
+  }
+}
+
+/* Progress Bar Animation */
+@keyframes progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.animate-progress {
+  animation: progress 5s linear forwards;
+}

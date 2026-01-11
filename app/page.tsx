@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { Programs } from "@/components/sections/Programs";
 import { Method } from "@/components/sections/Method";
 import { Results } from "@/components/sections/Results";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground selection:bg-[var(--accent)] selection:text-black">
       <Navbar />
       <Hero />
+      <SocialProofSection />
       <Programs />
       <Method />
       <Results />

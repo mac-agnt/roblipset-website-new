@@ -2,6 +2,11 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { Check, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Method } from "@/components/sections/Method";
+import { Results } from "@/components/sections/Results";
+import { Ebooks } from "@/components/sections/Ebooks";
 
 export default function ProgramsPage() {
   return (
@@ -10,8 +15,9 @@ export default function ProgramsPage() {
       <ProgramsHero />
       <Differences />
       <ProgramOptions />
-      <ValueStack />
-      <Testimonials />
+      <Ebooks />
+      <Method />
+      <Results />
       <HowItWorks />
       <FAQ />
       <FinalCTA />
@@ -22,47 +28,128 @@ export default function ProgramsPage() {
 
 function ProgramsHero() {
   return (
-    <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-background">
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#000000] opacity-95" />
-        <div className="bg-noise" />
+    <section className="relative min-h-screen overflow-hidden bg-black flex items-end md:items-center">
+      {/* ─────────────────────────────────────────────────────────────────
+          BACKGROUND IMAGE (Podcast + Mentorship style treatment)
+      ───────────────────────────────────────────────────────────────── */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Fallback gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] to-black" />
+        
+        {/* Hero Image */}
+        <Image 
+          src="/AR509644.jpg"
+          alt="Rob Lipsett - Programs"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[50%_30%] md:object-[50%_20%] scale-[1.05] md:scale-100 origin-center"
+          quality={85}
+        />
+        
+        {/* Gradient Overlays for Text Legibility (matching Podcast/Mentorship heroes) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent opacity-[0.97] md:opacity-95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent opacity-50" />
+        
+        {/* Subtle Grain Texture */}
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.015] mix-blend-overlay pointer-events-none" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.9] tracking-tight text-balance">
+      {/* ─────────────────────────────────────────────────────────────────
+          CONTENT: Premium editorial hero layout
+      ───────────────────────────────────────────────────────────────── */}
+      <div className="relative z-10 container mx-auto px-4 md:px-6 pb-16 md:pb-24 pt-32 md:pt-0">
+        <div className="max-w-3xl">
+          {/* Eyebrow Badge (matching Podcast/Mentorship style) */}
+          <div className="mb-6 md:mb-8">
+            <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[#cfa777] font-medium">
+              Training Programs
+            </span>
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05] tracking-tight mb-6">
             Structure. Purpose. <br />
             <span className="text-white/40">Progression.</span>
           </h1>
-          <p className="font-sans text-lg text-white/50 max-w-lg mx-auto leading-relaxed text-pretty">
+
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-xl mb-8">
             Stop guessing. My system provides the accountability and structure you need to build a powerful physique.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
-            <Button variant="primary" size="lg">Join the Program</Button>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 pt-4 sm:pt-0">SCROLL TO EXPLORE</span>
+
+          {/* CTA Cluster (matching Mentorship hero pattern) */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-4">
+            <a
+              href="#options"
+              className="inline-flex items-center gap-2 bg-[#cfa777] hover:bg-[#d9b88a] text-black font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-[#cfa777]/20"
+            >
+              View Programs
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <Link
+              href="/coaching"
+              className="inline-flex items-center gap-2 px-6 py-3.5 text-white/60 hover:text-white border border-white/10 hover:border-white/20 rounded-xl transition-all duration-300"
+            >
+              <span>Apply for Coaching</span>
+            </Link>
           </div>
+
+          {/* Microcopy */}
+          <p className="text-white/30 text-xs">
+            1:1 Coaching or Self-Guided App · Your choice
+          </p>
         </div>
       </div>
+
+      {/* Bottom Fade Transition (matching Mentorship hero) */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none z-10" />
     </section>
   );
 }
 
 function Differences() {
   const pillars = [
-    { title: "Progression", desc: "Every session builds on the last." },
-    { title: "Philosophy", desc: "Science-based. No trends." },
-    { title: "Holistic", desc: "Training. Nutrition. Mindset." },
-    { title: "Consistency", desc: "Sustainable routines. No burnout." }
+    { title: "Accountability", desc: "Be fully honest about where you're at — then do the work." },
+    { title: "Structure", desc: "A clear plan you can follow daily, even when motivation dips." },
+    { title: "Simplicity", desc: "No trends. Just the basics done properly, consistently." },
+    { title: "Consistency", desc: "Progress rewards reps — not hype." }
   ];
 
   return (
-    <section className="py-32 bg-[#050505] border-b border-white/[0.03]">
+    <section className="py-24 md:py-32 bg-[#050505] border-b border-white/[0.04]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-4 gap-12">
-          {pillars.map((pillar) => (
-            <div key={pillar.title} className="group">
-              <h3 className="font-serif text-2xl text-white mb-4 group-hover:text-[var(--accent)] transition-colors duration-500">{pillar.title}</h3>
-              <p className="text-sm text-white/40 leading-relaxed">{pillar.desc}</p>
+        {/* Section Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+            The Foundation
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
+            What Sets This Apart
+          </h2>
+        </div>
+        
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {pillars.map((pillar, i) => (
+            <div 
+              key={pillar.title} 
+              className="group relative bg-[#0a0a0a] border border-white/[0.06] rounded-2xl p-6 md:p-8 hover:border-white/[0.12] transition-all duration-300 hover:-translate-y-0.5"
+            >
+              {/* Number indicator */}
+              <span className="text-[10px] font-mono text-white/20 tracking-[0.2em] mb-4 block">
+                0{i + 1}
+              </span>
+              
+              <h3 className="font-serif text-xl md:text-2xl text-white mb-3 group-hover:text-[#cfa777] transition-colors duration-300">
+                {pillar.title}
+              </h3>
+              <p className="text-sm text-white/50 leading-relaxed">
+                {pillar.desc}
+              </p>
+              
+              {/* Subtle top accent line on hover */}
+              <div className="absolute top-0 inset-x-6 h-px bg-gradient-to-r from-transparent via-[#cfa777]/0 to-transparent group-hover:via-[#cfa777]/30 transition-all duration-300" />
             </div>
           ))}
         </div>
@@ -72,94 +159,114 @@ function Differences() {
 }
 
 function ProgramOptions() {
-  const programs = [
-    {
-      name: "1:1 Coaching",
-      target: "Maximum Accountability",
-      outcome: "Total Transformation",
-      desc: "Customised training. Tailored diet. Private access.",
-      cta: "Apply Now",
-      variant: "primary" as const
-    },
-    {
-      name: "The App",
-      target: "Self-Driven Athlete",
-      outcome: "Structure on Demand",
-      desc: "Workout programs. Nutrition tracking. Mindset guides.",
-      cta: "Start Free Trial",
-      variant: "outline" as const
-    }
-  ];
-
   return (
-    <section className="py-32 bg-background">
+    <section id="options" className="py-24 md:py-32 bg-[#030303]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {programs.map((program) => (
-            <div key={program.name} className="flex flex-col bg-[#0a0a0a] border border-white/[0.05] p-12 hover:border-white/10 transition-all duration-500">
-              <div className="mb-8">
-                 <span className="text-[10px] font-medium text-[var(--accent)] uppercase tracking-[0.2em]">{program.target}</span>
-                 <h3 className="font-serif text-4xl text-white mt-4 mb-6">{program.name}</h3>
-                 <p className="text-white/50 leading-relaxed text-lg">{program.desc}</p>
-              </div>
-              <div className="mt-auto pt-10 border-t border-white/[0.05]">
-                <Button variant={program.variant} fullWidth>{program.cta}</Button>
+        {/* Section Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+            Choose Your Path
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight mb-4">
+            Two Ways to Train With Me
+          </h2>
+          <p className="text-white/40 text-base max-w-lg mx-auto">
+            Whether you want hands-on coaching or a self-guided system, there's a clear path forward.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+          
+          {/* 1:1 COACHING CARD */}
+          <div className="group relative flex flex-col bg-[#0a0a0a] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-300 hover:-translate-y-0.5">
+            {/* Image */}
+            <div className="relative aspect-[16/10] overflow-hidden">
+              <Image
+                src="/call-image.png"
+                alt="1:1 Coaching with Rob Lipsett"
+                fill
+                className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
+              
+              {/* Badge */}
+              <div className="absolute top-4 left-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#cfa777]/10 border border-[#cfa777]/20 rounded-full text-[10px] uppercase tracking-[0.15em] text-[#cfa777] font-medium">
+                  Premium
+                </span>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ValueStack() {
-  const items = [
-    "Structured training plans",
-    "Lipsett Fitness App access",
-    "Ongoing program updates",
-    "Nutrition guidance",
-    "Mindset resources",
-    "Community accountability"
-  ];
-
-  return (
-    <section className="py-32 bg-[#050505] border-y border-white/[0.03]">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">What You Get</h2>
-          <div className="grid md:grid-cols-2 gap-y-6 gap-x-12">
-            {items.map((item) => (
-              <div key={item} className="flex items-center gap-4 group">
-                <div className="w-1 h-1 bg-white/20 rounded-full group-hover:bg-[var(--accent)] transition-colors" />
-                <span className="text-white/60 text-lg group-hover:text-white transition-colors">{item}</span>
-              </div>
-            ))}
+            
+            {/* Content */}
+            <div className="flex flex-col flex-1 p-6 md:p-8">
+              <span className="text-[10px] font-medium text-[#cfa777] uppercase tracking-[0.2em] mb-2">
+                Maximum Accountability
+              </span>
+              <h3 className="font-serif text-2xl md:text-3xl text-white mb-3">
+                1:1 Coaching
+              </h3>
+              <p className="text-white/50 leading-relaxed mb-6 flex-1">
+                Customised training and nutrition. Direct access. Weekly check-ins. For those who want the full transformation experience.
+              </p>
+              
+              {/* CTA */}
+              <Link
+                href="/coaching"
+                className="group/btn inline-flex items-center justify-center gap-2 w-full bg-[#cfa777] hover:bg-[#d9b88a] text-black font-semibold py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
+              >
+                Apply for Coaching
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
-function Testimonials() {
-  const reviews = [
-    { text: "The structure I needed to finally break through my plateau.", author: "David K." },
-    { text: "Science-based and sustainable. Best shape of my life.", author: "Sarah M." },
-    { text: "Added significant size while staying lean.", author: "James L." }
-  ];
-
-  return (
-    <section className="py-32 bg-background overflow-hidden border-b border-white/[0.03]">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-24">Real Progress</h2>
-        <div className="grid md:grid-cols-3 gap-12">
-          {reviews.map((review, i) => (
-            <div key={i} className="group p-8 border-l border-white/10 hover:border-[var(--accent)] transition-colors duration-500 pl-8">
-              <p className="text-white/70 font-serif text-xl mb-6 leading-relaxed">"{review.text}"</p>
-              <p className="text-[10px] text-white/30 uppercase tracking-[0.2em]">{review.author}</p>
+          {/* THE APP CARD */}
+          <div className="group relative flex flex-col bg-[#0a0a0a] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-300 hover:-translate-y-0.5">
+            {/* Image */}
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#080808]">
+              <Image
+                src="/Habit+Tracker+Mockup-1920w.webp"
+                alt="The Lipsett Fitness App"
+                fill
+                className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
+              
+              {/* Badge */}
+              <div className="absolute top-4 left-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.15em] text-white/60 font-medium">
+                  Self-Guided
+                </span>
+              </div>
             </div>
-          ))}
+            
+            {/* Content */}
+            <div className="flex flex-col flex-1 p-6 md:p-8">
+              <span className="text-[10px] font-medium text-white/40 uppercase tracking-[0.2em] mb-2">
+                Structure on Demand
+              </span>
+              <h3 className="font-serif text-2xl md:text-3xl text-white mb-3">
+                The App
+              </h3>
+              <p className="text-white/50 leading-relaxed mb-6 flex-1">
+                Workout programs. Nutrition tracking. Mindset resources. Everything you need to train with structure — at your own pace.
+              </p>
+              
+              {/* CTA */}
+              <Link
+                href="/app"
+                className="group/btn inline-flex items-center justify-center gap-2 w-full bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.12] hover:border-white/[0.20] text-white font-semibold py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
+              >
+                Explore the App
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+              </Link>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -175,12 +282,22 @@ function HowItWorks() {
   ];
 
   return (
-    <section className="py-32 bg-[#050505]">
+    <section className="py-24 md:py-32 bg-[#050505]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-4 gap-8 border-t border-white/[0.05] pt-12">
+        {/* Centered Section Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+            The Process
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
+            How It Works
+          </h2>
+        </div>
+        
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {steps.map((step) => (
-            <div key={step.num} className="group">
-              <span className="text-[10px] font-mono text-white/20 mb-4 block tracking-[0.2em] group-hover:text-[var(--accent)] transition-colors">{step.num}</span>
+            <div key={step.num} className="group text-center">
+              <span className="text-[10px] font-mono text-white/20 mb-4 block tracking-[0.2em] group-hover:text-[#cfa777] transition-colors">{step.num}</span>
               <h3 className="font-serif text-xl text-white mb-2">{step.title}</h3>
               <p className="text-sm text-white/40">{step.desc}</p>
             </div>
@@ -201,9 +318,18 @@ function FAQ() {
   ];
 
   return (
-    <section className="py-32 bg-background">
+    <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-        <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-16">Questions</h2>
+        {/* Centered Section Header */}
+        <div className="text-center mb-16">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+            FAQ
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
+            Questions
+          </h2>
+        </div>
+        
         <div className="space-y-6">
           {faqs.map((faq, i) => (
             <div key={i} className="border-b border-white/[0.05] pb-6 group">
@@ -219,12 +345,31 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="py-32 bg-[#0a0a0a] border-t border-white/[0.03] text-center">
+    <section className="py-24 md:py-32 bg-[#0a0a0a] border-t border-white/[0.04] text-center">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-4xl md:text-6xl text-white mb-8">Start Training.</h2>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Button variant="primary" size="lg">Join the Program</Button>
-          <a href="/coaching" className="text-white/40 text-xs uppercase tracking-[0.2em] hover:text-white transition-colors">Need Help Choosing?</a>
+        <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+          Ready to Begin
+        </p>
+        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 tracking-tight">
+          Start Training.
+        </h2>
+        <p className="text-white/40 text-base md:text-lg mb-10 max-w-md mx-auto">
+          Choose coaching for hands-on accountability or the app for self-guided structure.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/coaching"
+            className="inline-flex items-center gap-2 bg-[#cfa777] hover:bg-[#d9b88a] text-black font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
+          >
+            Apply for Coaching
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link 
+            href="/app" 
+            className="inline-flex items-center gap-2 px-8 py-4 text-white/60 hover:text-white border border-white/10 hover:border-white/20 rounded-xl transition-all duration-300"
+          >
+            Explore the App
+          </Link>
         </div>
       </div>
     </section>

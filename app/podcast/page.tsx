@@ -29,7 +29,7 @@ function PodcastHero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-center lg:object-[50%_40%]"
           quality={75}
         />
         

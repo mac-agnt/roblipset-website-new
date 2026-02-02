@@ -8,10 +8,8 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "#method", label: "Method" },
+  { href: "#mechanism", label: "Why It Works" },
   { href: "#included", label: "What You Get" },
-  { href: "#results", label: "Results" },
-  { href: "#faq", label: "FAQ" },
 ];
 
 export function MentorshipNavbar() {
@@ -31,7 +29,7 @@ export function MentorshipNavbar() {
 
   // Active section tracking via IntersectionObserver
   useEffect(() => {
-    const sectionIds = ["method", "included", "results", "faq", "apply"];
+    const sectionIds = ["mechanism", "included", "apply"];
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {

@@ -170,6 +170,24 @@ p {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
 /* Infinite Scroll Animation (for 4 duplicated sets) */
 @keyframes infinite-scroll {
   from { transform: translateX(0); }

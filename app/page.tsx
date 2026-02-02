@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { Programs } from "@/components/sections/Programs";
 import { Method } from "@/components/sections/Method";
+import { Ebooks } from "@/components/sections/Ebooks";
 import { Results } from "@/components/sections/Results";
 import { Collaborations } from "@/components/sections/Collaborations";
 import { Podcast } from "@/components/sections/Podcast";
@@ -17,6 +18,7 @@ export default function Home() {
       <SocialProofSection />
       <Programs />
       <Method />
+      <Ebooks />
       <Results />
       <Collaborations />
       <Podcast />

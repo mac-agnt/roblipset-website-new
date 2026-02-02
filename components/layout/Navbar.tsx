@@ -11,7 +11,6 @@ const navLinks = [
   { href: "/mentorship", label: "Mentorship" },
   { href: "/programs", label: "Programs" },
   { href: "/app", label: "App" },
-  { href: "/about", label: "About" },
   { href: "/podcast", label: "Podcast" },
 ];
 

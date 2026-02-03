@@ -195,13 +195,13 @@ function ClientTransformationsSection() {
       {/* Section header — Premium upgrade */}
       <div className="w-full px-4 md:px-6 mb-12 md:mb-16">
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-[#cfa777]/50 text-[10px] tracking-[0.35em] uppercase mb-4 font-medium">
+          <p className="text-[#cfa777]/50 text-[10px] tracking-[0.35em] uppercase mb-4 font-medium max-w-none">
             Client Proof
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-4 tracking-tight">
             Repeatable Outcomes
           </h2>
-          <p className="text-white/40 text-base md:text-lg">
+          <p className="text-white/40 text-base md:text-lg max-w-none">
             Same system. Executed consistently.
           </p>
         </div>
@@ -362,7 +362,7 @@ function MechanismSection() {
           
           {/* Section header — Centered */}
           <div className="text-center mb-14 md:mb-16 max-w-3xl mx-auto">
-            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
               The Difference
             </p>
             <h2 className="font-serif text-4xl md:text-5xl text-white mb-5 tracking-tight">
@@ -514,7 +514,7 @@ function QualificationSection() {
               This isn't for everyone.
             </h2>
             
-            <p className="text-white/40 text-base md:text-lg">
+            <p className="text-white/40 text-base md:text-lg max-w-none">
               If accepted, you're expected to execute.
             </p>
           </div>
@@ -678,7 +678,7 @@ function DeliverySection() {
               HEADER — Premium hierarchy with comparison chips
           ═══════════════════════════════════════════════════════════════ */}
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
               What You Get
             </p>
             <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 tracking-tight">
@@ -899,7 +899,7 @@ function FinalCTASection() {
           </a>
 
           {/* Micro-copy */}
-          <p className="text-white/30 text-sm mt-6">
+          <p className="text-white/30 text-sm mt-6 max-w-none">
             Apply · 2–3 minutes · Reviewed personally
           </p>
 
@@ -913,7 +913,7 @@ function FinalCTASection() {
               
               <div className="text-center">
                 {/* Eyebrow */}
-                <p className="text-white/30 text-[10px] tracking-[0.3em] uppercase mb-4 font-medium">
+                <p className="text-white/30 text-[10px] tracking-[0.3em] uppercase mb-4 font-medium max-w-none">
                   Alternative Path
                 </p>
                 

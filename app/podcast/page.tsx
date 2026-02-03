@@ -167,7 +167,7 @@ function PodcastEmailCapture() {
           <h2 className="font-serif text-3xl md:text-5xl text-white">
             Never Miss an Episode
           </h2>
-          <p className="text-white/50 text-lg">
+          <p className="text-white/50 text-lg max-w-none">
             Insights directly to your inbox.
           </p>
           
@@ -183,7 +183,7 @@ function PodcastEmailCapture() {
             </Button>
           </form>
           
-          <p className="text-[10px] text-white/20 uppercase tracking-[0.2em]">
+          <p className="text-[10px] text-white/20 uppercase tracking-[0.2em] max-w-none">
             No spam. Value only.
           </p>
         </div>

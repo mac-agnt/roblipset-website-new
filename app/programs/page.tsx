@@ -89,16 +89,16 @@ function ProgramsHero() {
               <ArrowRight className="w-4 h-4" />
             </a>
             <Link
-              href="/coaching"
+              href="/mentorship"
               className="inline-flex items-center gap-2 px-6 py-3.5 text-white/60 hover:text-white border border-white/10 hover:border-white/20 rounded-xl transition-all duration-300"
             >
-              <span>Apply for Coaching</span>
+              <span>Apply for Mentorship</span>
             </Link>
           </div>
 
           {/* Microcopy */}
           <p className="text-white/30 text-xs">
-            1:1 Coaching or Self-Guided App · Your choice
+            1:1 Mentorship or Self-Guided App · Your choice
           </p>
         </div>
       </div>
@@ -121,8 +121,8 @@ function Differences() {
     <section className="py-24 md:py-32 bg-[#050505] border-b border-white/[0.04]">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+        <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
             The Foundation
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
@@ -163,27 +163,27 @@ function ProgramOptions() {
     <section id="options" className="py-24 md:py-32 bg-[#030303]">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+        <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
             Choose Your Path
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight mb-4">
             Two Ways to Train With Me
           </h2>
           <p className="text-white/40 text-base max-w-lg mx-auto">
-            Whether you want hands-on coaching or a self-guided system, there's a clear path forward.
+            Whether you want hands-on mentorship or a self-guided system, there's a clear path forward.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           
-          {/* 1:1 COACHING CARD */}
+          {/* 1:1 MENTORSHIP CARD */}
           <div className="group relative flex flex-col bg-[#0a0a0a] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-300 hover:-translate-y-0.5">
             {/* Image */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/call-image.png"
-                alt="1:1 Coaching with Rob Lipsett"
+                alt="1:1 Mentorship with Rob Lipsett"
                 fill
                 className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -205,7 +205,7 @@ function ProgramOptions() {
                 Maximum Accountability
               </span>
               <h3 className="font-serif text-2xl md:text-3xl text-white mb-3">
-                1:1 Coaching
+                1:1 Mentorship
               </h3>
               <p className="text-white/50 leading-relaxed mb-6 flex-1">
                 Customised training and nutrition. Direct access. Weekly check-ins. For those who want the full transformation experience.
@@ -213,10 +213,10 @@ function ProgramOptions() {
               
               {/* CTA */}
               <Link
-                href="/coaching"
+                href="/mentorship"
                 className="group/btn inline-flex items-center justify-center gap-2 w-full bg-[#cfa777] hover:bg-[#d9b88a] text-black font-semibold py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
               >
-                Apply for Coaching
+                Apply for Mentorship
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
               </Link>
             </div>
@@ -275,7 +275,7 @@ function ProgramOptions() {
 
 function HowItWorks() {
   const steps = [
-    { num: "01", title: "Choose", desc: "Select Coaching or App." },
+    { num: "01", title: "Choose", desc: "Select Mentorship or App." },
     { num: "02", title: "Access", desc: "Get your plan instantly." },
     { num: "03", title: "Train", desc: "Follow the structure." },
     { num: "04", title: "Transform", desc: "Build consistency." }
@@ -285,8 +285,8 @@ function HowItWorks() {
     <section className="py-24 md:py-32 bg-[#050505]">
       <div className="container mx-auto px-4 md:px-6">
         {/* Centered Section Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+        <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
             The Process
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
@@ -321,8 +321,8 @@ function FAQ() {
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
         {/* Centered Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
+        <div className="text-center mb-16 mx-auto">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
             FAQ
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
@@ -345,23 +345,25 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="py-24 md:py-32 bg-[#0a0a0a] border-t border-white/[0.04] text-center">
+    <section className="py-24 md:py-32 bg-[#0a0a0a] border-t border-white/[0.04]">
       <div className="container mx-auto px-4">
-        <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium">
-          Ready to Begin
-        </p>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 tracking-tight">
-          Start Training.
-        </h2>
-        <p className="text-white/40 text-base md:text-lg mb-10 max-w-md mx-auto">
-          Choose coaching for hands-on accountability or the app for self-guided structure.
-        </p>
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
+            Ready to Begin
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 tracking-tight">
+            Start Training.
+          </h2>
+          <p className="text-white/40 text-base md:text-lg mb-10">
+            Choose mentorship for hands-on accountability or the app for self-guided structure.
+          </p>
+        </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/coaching"
+            href="/mentorship"
             className="inline-flex items-center gap-2 bg-[#cfa777] hover:bg-[#d9b88a] text-black font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
           >
-            Apply for Coaching
+            Apply for Mentorship
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link 

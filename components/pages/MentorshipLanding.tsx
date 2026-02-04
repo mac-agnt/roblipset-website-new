@@ -67,7 +67,7 @@ function HeroSection() {
         {/* Primary hero image with fallback gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] to-black" />
         <Image 
-          src="/AR509644.jpg"
+          src="/AR509633.jpg"
           alt="Rob Lipsett - Mentorship"
           fill
           priority
@@ -193,7 +193,7 @@ function ClientTransformationsSection() {
   return (
     <section className="relative bg-[#030303] pt-20 md:pt-28 pb-8 md:pb-12 overflow-hidden">
       {/* Section header — Premium upgrade */}
-      <div className="w-full px-4 md:px-6 mb-12 md:mb-16">
+      <div className="container mx-auto px-4 md:px-6 mb-12 md:mb-16">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-[#cfa777]/50 text-[10px] tracking-[0.35em] uppercase mb-4 font-medium max-w-none">
             Client Proof
@@ -286,7 +286,7 @@ function ApplyNowBlock() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 md:px-6">
+      <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           {/* Premium bordered container */}
           <div className="relative border border-white/[0.08] rounded-3xl p-8 md:p-14 lg:p-16 bg-gradient-to-b from-white/[0.02] to-transparent">
@@ -357,7 +357,7 @@ function MechanismSection() {
 
   return (
     <section id="mechanism" className="relative bg-[#050505] py-20 md:py-28 border-y border-white/[0.04] scroll-mt-24">
-      <div className="w-full px-4">
+      <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           
           {/* Section header — Centered */}
@@ -493,7 +493,7 @@ function QualificationSection() {
 
   return (
     <section className="relative bg-[#030303] py-24 md:py-32">
-      <div className="w-full px-4">
+      <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           
           {/* ═══════════════════════════════════════════════════════════════
@@ -671,7 +671,7 @@ function DeliverySection() {
 
   return (
     <section id="included" className="relative bg-[#050505] py-24 md:py-32 border-y border-white/[0.04] scroll-mt-24">
-      <div className="w-full px-4">
+      <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           
           {/* ═══════════════════════════════════════════════════════════════
@@ -875,7 +875,7 @@ function FinalCTASection() {
       {/* Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#cfa777]/[0.03] rounded-full blur-[120px]" />
 
-      <div className="w-full px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           {/* Restate outcome */}
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-4">

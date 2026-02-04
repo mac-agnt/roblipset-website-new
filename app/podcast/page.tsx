@@ -21,17 +21,19 @@ export default function PodcastPage() {
 function PodcastHero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-black flex items-end md:items-center">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image 
-          src="/AR509651.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center lg:object-[50%_40%]"
-          quality={75}
-        />
+      {/* Background Image — Desktop: shifted down to clear navbar */}
+      <div className="absolute inset-0 z-0 lg:translate-y-20">
+        <div className="absolute inset-0 lg:inset-y-[-80px]">
+          <Image 
+            src="/AR509651.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+            quality={75}
+          />
+        </div>
         
         {/* Gradient Overlays for Text Legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90" />

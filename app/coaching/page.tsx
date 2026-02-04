@@ -25,34 +25,34 @@ export default function ProductsPage() {
 
 function ProductsHero() {
   return (
-    <section className="relative min-h-[80vh] overflow-hidden bg-black flex items-end md:items-center">
+    <section className="relative min-h-[100svh] overflow-hidden bg-black flex items-end">
       {/* Background Image with Mentorship-style treatment */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Fallback gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] to-black" />
         
-        {/* Hero Image */}
+        {/* Hero Image — Anchored lower to preserve head clearance above navbar */}
         <Image 
           src="/AR509616.jpg"
           alt="Rob Lipsett - Products & Partners"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[50%_30%] md:object-[50%_40%]"
+          className="object-cover object-[50%_70%] sm:object-[50%_60%] lg:object-[50%_50%]"
           quality={85}
         />
         
         {/* Gradient Overlays for Text Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent opacity-30" />
         
         {/* Subtle Grain Texture */}
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-6 pb-20 md:pb-28 pt-32 md:pt-0">
+      {/* Content — Positioned at bottom with safe spacing */}
+      <div className="relative z-10 container mx-auto px-4 md:px-6 pb-16 sm:pb-20 md:pb-28 pt-[40vh] sm:pt-[45vh] md:pt-[50vh]">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <div className="mb-6">

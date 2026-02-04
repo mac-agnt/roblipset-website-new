@@ -28,7 +28,81 @@ function AppHero() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-7xl">
         
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-center">
+        {/* MOBILE LAYOUT (< sm): Headline → Phone (smaller) → Subheader → Features */}
+        <div className="sm:hidden flex flex-col items-center text-center space-y-6">
+          
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3">
+            <div className="h-px w-10 bg-[#cfa777]/60" />
+            <span className="text-[9px] font-bold tracking-[0.3em] text-[#cfa777]/90 uppercase">
+              The Training System
+            </span>
+            <div className="h-px w-10 bg-[#cfa777]/60" />
+          </div>
+
+          {/* Headline */}
+          <h1 className="font-serif text-3xl text-white leading-[1.05] tracking-tight max-w-sm">
+            Everything you need to train with intent.
+          </h1>
+
+          {/* Phone Image - Smaller and centered */}
+          <div className="relative w-full max-w-[240px] py-4">
+            <div className="relative w-full" style={{ aspectRatio: '9/19' }}>
+              <Image
+                src="/Habit+Tracker+Mockup-1920w.webp"
+                alt="App Interface"
+                fill
+                sizes="240px"
+                className="object-contain rounded-xl"
+                quality={95}
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Subhead */}
+          <p className="text-white/50 text-base leading-relaxed max-w-md">
+            Programs, tracking, and guidance in one place—with mentorship available when you want tighter feedback.
+          </p>
+
+          {/* System Loop */}
+          <div className="space-y-4 pt-4 w-full max-w-md">
+            <div className="text-[#cfa777]/60 text-[10px] font-bold tracking-[0.25em] uppercase mb-4">
+              How It Works
+            </div>
+            {[
+              { step: "01", label: "Plan", desc: "Custom program inside the app" },
+              { step: "02", label: "Execute", desc: "Track every session, every day" },
+              { step: "03", label: "Progress", desc: "See results, adjust as needed" }
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-5 text-left">
+                <div className="flex items-center justify-center w-9 h-9 rounded-full border border-[#cfa777]/30 bg-[#cfa777]/5 flex-shrink-0">
+                  <span className="text-[#cfa777] text-[11px] font-bold tracking-wider">{item.step}</span>
+                </div>
+                <div className="pt-1">
+                  <h3 className="text-white font-semibold text-base mb-0.5 tracking-tight">{item.label}</h3>
+                  <p className="text-white/40 text-sm leading-snug">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTAs */}
+          <div className="pt-6 space-y-3 w-full max-w-md">
+            <Link href="/mentorship" className="block">
+              <button className="w-full min-h-[48px] px-8 rounded-full bg-[#cfa777] text-black text-sm font-semibold tracking-wide transition-all duration-200 hover:bg-[#d4af85] shadow-lg shadow-[#cfa777]/20">
+                Enter the Mentorship
+              </button>
+            </Link>
+            <button className="w-full min-h-[48px] px-8 rounded-full border border-white/20 bg-white/[0.02] text-white text-sm font-medium tracking-wide transition-all duration-200 hover:bg-white/[0.06] hover:border-white/30 backdrop-blur-sm">
+              Download the App
+            </button>
+          </div>
+
+        </div>
+
+        {/* TABLET+ LAYOUT: Original 2-column grid */}
+        <div className="hidden sm:grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-center">
           
           {/* LEFT COLUMN: Content */}
           <div className="space-y-8 max-w-xl">

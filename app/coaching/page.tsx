@@ -99,9 +99,11 @@ function FuelCakesSection() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#cfa777]/10 border border-[#cfa777]/20 rounded-full text-[10px] uppercase tracking-[0.2em] text-[#cfa777] font-medium mb-6">
-            Founder
-          </span>
+          <div className="mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#cfa777]/10 border border-[#cfa777]/20 rounded-full text-[10px] uppercase tracking-[0.2em] text-[#cfa777] font-medium">
+              Founder
+            </span>
+          </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white tracking-tight">
             Fuel Cakes
           </h2>
@@ -188,9 +190,11 @@ function PartnersSection() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
-            Trusted Partners
-          </p>
+          <div className="mb-4">
+            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium max-w-none inline-block">
+              Trusted Partners
+            </p>
+          </div>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
             Brands I Use Daily
           </h2>
@@ -393,60 +397,64 @@ function FinalCTA() {
               </span>
             </div>
 
-            {/* Content */}
-            <div className="text-center space-y-8">
+              {/* Content */}
+              <div className="text-center space-y-8 flex flex-col items-center max-w-4xl mx-auto">
               
-              {/* Headline */}
-              <div>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-3 tracking-tight leading-tight">
-                  Same Brands. Lower Price.
-                </h2>
-                <p className="text-white/40 text-base max-w-none">
-                  Use code LIPSETT for 10% off your order
-                </p>
-              </div>
-
-              {/* Code Badge with Copy Button */}
-              <div className="flex flex-col items-center gap-6">
-                <div className="relative inline-flex items-center gap-3 bg-[#0a0a0a] border-2 border-[#cfa777]/20 rounded-xl px-6 py-4 md:px-8 md:py-5">
-                  {/* Subtle glow */}
-                  <div className="absolute inset-0 bg-[#cfa777]/5 rounded-xl blur-sm -z-10" />
-                  
-                  {/* Code Text */}
-                  <span 
-                    id="discount-code"
-                    className="text-[#cfa777] font-bold text-3xl md:text-4xl tracking-[0.15em] font-mono select-all"
-                  >
-                    LIPSETT
-                  </span>
-                  
-                  {/* Copy Button */}
-                  <button
-                    onClick={copyCode}
-                    className="p-2 hover:bg-white/[0.08] rounded-lg transition-colors duration-150 group"
-                    aria-label="Copy discount code"
-                  >
-                    {copied ? (
-                      <Check className="w-5 h-5 text-[#cfa777]" />
-                    ) : (
-                      <Copy className="w-5 h-5 text-white/40 group-hover:text-white/60" />
-                    )}
-                  </button>
+                {/* Headline */}
+                <div>
+                  <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-3 tracking-tight leading-tight">
+                    Same Brands. Lower Price.
+                  </h2>
+                  <div>
+                    <p className="text-white/40 text-base max-w-none inline-block">
+                      Use code LIPSETT for 10% off your order
+                    </p>
+                  </div>
                 </div>
 
-                {/* Copied Feedback */}
-                {copied && (
-                  <span className="text-[#cfa777] text-sm font-medium animate-in fade-in duration-150">
-                    ✓ Copied to clipboard
-                  </span>
-                )}
-              </div>
+                {/* Code Badge with Copy Button */}
+                <div className="flex flex-col items-center gap-6">
+                  <div className="relative inline-flex items-center gap-3 bg-[#0a0a0a] border-2 border-[#cfa777]/20 rounded-xl px-6 py-4 md:px-8 md:py-5">
+                    {/* Subtle glow */}
+                    <div className="absolute inset-0 bg-[#cfa777]/5 rounded-xl blur-sm -z-10" />
+                    
+                    {/* Code Text */}
+                    <span 
+                      id="discount-code"
+                      className="text-[#cfa777] font-bold text-3xl md:text-4xl tracking-[0.15em] font-mono select-all"
+                    >
+                      LIPSETT
+                    </span>
+                    
+                    {/* Copy Button */}
+                    <button
+                      onClick={copyCode}
+                      className="p-2 hover:bg-white/[0.08] rounded-lg transition-colors duration-150 group"
+                      aria-label="Copy discount code"
+                    >
+                      {copied ? (
+                        <Check className="w-5 h-5 text-[#cfa777]" />
+                      ) : (
+                        <Copy className="w-5 h-5 text-white/40 group-hover:text-white/60" />
+                      )}
+                    </button>
+                  </div>
 
-              {/* Brand CTAs — Clear Shopping Buttons */}
-              <div className="space-y-6 pt-6">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 max-w-none">
-                  Shop With Discount
-                </p>
+                  {/* Copied Feedback */}
+                  {copied && (
+                    <span className="text-[#cfa777] text-sm font-medium animate-in fade-in duration-150">
+                      ✓ Copied to clipboard
+                    </span>
+                  )}
+                </div>
+
+                {/* Brand CTAs — Clear Shopping Buttons */}
+                <div className="space-y-6 pt-6 w-full">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 max-w-none inline-block">
+                      Shop With Discount
+                    </p>
+                  </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
                   {brands.map((brand) => (

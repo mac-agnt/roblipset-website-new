@@ -22,17 +22,21 @@ function PodcastHero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-black flex items-end md:items-center">
       {/* Background Image — Desktop: shifted down to clear navbar */}
-      <div className="absolute inset-0 z-0 lg:translate-y-20">
-        <div className="absolute inset-0 lg:inset-y-[-80px]">
-          <Image 
-            src="/AR509651.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-            quality={75}
-          />
+      <div className="absolute inset-0 z-0">
+        {/* Wrapper with desktop-only transform */}
+        <div className="absolute inset-0 lg:translate-y-24">
+          {/* Inner wrapper with compensated bounds */}
+          <div className="absolute inset-0 lg:inset-y-[-96px]">
+            <Image 
+              src="/AR509651.jpg"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+              quality={75}
+            />
+          </div>
         </div>
         
         {/* Gradient Overlays for Text Legibility */}
@@ -200,9 +204,11 @@ function ProgramCTA() {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto space-y-10">
           <h2 className="font-serif text-4xl md:text-6xl text-white">Apply the Lessons.</h2>
-          <p className="text-white/50 text-lg">
-            Ready to train?
-          </p>
+          <div>
+            <p className="text-white/50 text-lg max-w-none inline-block">
+              Ready to train?
+            </p>
+          </div>
           <div className="pt-4">
             <Button variant="primary" size="lg">Explore the Programs</Button>
           </div>

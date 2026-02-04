@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, X, ArrowRight } from "lucide-react";
-import { MentorshipNavbar } from "@/components/mentorship/MentorshipNavbar";
+import { Navbar } from "@/components/layout/Navbar";
 
 // ============================================================================
 // TYPEFORM URL (single source of truth)
@@ -135,9 +135,11 @@ function HeroSection() {
               </a>
 
               {/* Microcopy */}
-              <p className="text-white/30 text-xs text-center">
-                2–3 minutes · Reviewed personally
-              </p>
+              <div>
+                <p className="text-white/30 text-xs text-center max-w-none inline-block">
+                  2–3 minutes · Reviewed personally
+                </p>
+              </div>
             </div>
           </aside>
 
@@ -195,15 +197,19 @@ function ClientTransformationsSection() {
       {/* Section header — Premium upgrade */}
       <div className="container mx-auto px-4 md:px-6 mb-12 md:mb-16">
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-[#cfa777]/50 text-[10px] tracking-[0.35em] uppercase mb-4 font-medium max-w-none">
-            Client Proof
-          </p>
+          <div className="mb-4">
+            <p className="text-[#cfa777]/50 text-[10px] tracking-[0.35em] uppercase font-medium max-w-none inline-block">
+              Client Proof
+            </p>
+          </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-4 tracking-tight">
             Repeatable Outcomes
           </h2>
-          <p className="text-white/40 text-base md:text-lg max-w-none">
-            Same system. Executed consistently.
-          </p>
+          <div>
+            <p className="text-white/40 text-base md:text-lg max-w-none inline-block">
+              Same system. Executed consistently.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -362,9 +368,11 @@ function MechanismSection() {
           
           {/* Section header — Centered */}
           <div className="text-center mb-14 md:mb-16 max-w-3xl mx-auto">
-            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
-              The Difference
-            </p>
+            <div className="mb-4">
+              <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium max-w-none inline-block">
+                The Difference
+              </p>
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl text-white mb-5 tracking-tight">
               Why This Works
             </h2>
@@ -459,8 +467,8 @@ function MechanismSection() {
           </div>
 
           {/* Closing statement */}
-          <div className="w-full">
-            <p className="text-white/50 text-base text-center font-medium max-w-xl mx-auto">
+          <div className="text-center">
+            <p className="text-white/50 text-base font-medium max-w-none inline-block">
               The difference is enforcement.
             </p>
           </div>
@@ -500,7 +508,7 @@ function QualificationSection() {
               GATE HEADER — Premium hierarchy
           ═══════════════════════════════════════════════════════════════ */}
           <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-8">
               <span className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium">
                 Qualification
               </span>
@@ -514,9 +522,11 @@ function QualificationSection() {
               This isn't for everyone.
             </h2>
             
-            <p className="text-white/40 text-base md:text-lg max-w-none">
-              If accepted, you're expected to execute.
-            </p>
+            <div>
+              <p className="text-white/40 text-base md:text-lg max-w-none inline-block">
+                If accepted, you're expected to execute.
+              </p>
+            </div>
           </div>
 
           {/* ═══════════════════════════════════════════════════════════════
@@ -678,9 +688,11 @@ function DeliverySection() {
               HEADER — Premium hierarchy with comparison chips
           ═══════════════════════════════════════════════════════════════ */}
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
-              What You Get
-            </p>
+            <div className="mb-4">
+              <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium max-w-none inline-block">
+                What You Get
+              </p>
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 tracking-tight">
               12 months of direct access.
             </h2>
@@ -899,9 +911,11 @@ function FinalCTASection() {
           </a>
 
           {/* Micro-copy */}
-          <p className="text-white/30 text-sm mt-6 max-w-none">
-            Apply · 2–3 minutes · Reviewed personally
-          </p>
+          <div>
+            <p className="text-white/30 text-sm mt-6 max-w-none inline-block">
+              Apply · 2–3 minutes · Reviewed personally
+            </p>
+          </div>
 
           {/* ═══════════════════════════════════════════════════════════════
               ALTERNATIVE PATH — Premium Secondary CTA Module
@@ -990,7 +1004,7 @@ function Footer() {
 export function MentorshipLanding() {
   return (
     <main className="bg-[#030303] min-h-screen">
-      <MentorshipNavbar />
+      <Navbar />
       <HeroSection />
       <ClientTransformationsSection />
       <ApplyNowBlock />

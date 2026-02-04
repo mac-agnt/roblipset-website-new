@@ -122,9 +122,11 @@ function Differences() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
-            The Foundation
-          </p>
+          <div className="mb-4">
+            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium max-w-none inline-block">
+              The Foundation
+            </p>
+          </div>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
             What Sets This Apart
           </h2>
@@ -164,9 +166,11 @@ function ProgramOptions() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
-            Choose Your Path
-          </p>
+          <div className="mb-4">
+            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium max-w-none inline-block">
+              Choose Your Path
+            </p>
+          </div>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight mb-4">
             Two Ways to Train With Me
           </h2>
@@ -286,9 +290,11 @@ function HowItWorks() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Centered Section Header */}
         <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
-            The Process
-          </p>
+          <div className="mb-4">
+            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium max-w-none inline-block">
+              The Process
+            </p>
+          </div>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
             How It Works
           </h2>
@@ -322,9 +328,11 @@ function FAQ() {
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
         {/* Centered Section Header */}
         <div className="text-center mb-16 mx-auto">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
-            FAQ
-          </p>
+          <div className="mb-4">
+            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium max-w-none inline-block">
+              FAQ
+            </p>
+          </div>
           <h2 className="font-serif text-3xl md:text-4xl text-white tracking-tight">
             Questions
           </h2>
@@ -348,9 +356,11 @@ function FinalCTA() {
     <section className="py-24 md:py-32 bg-[#0a0a0a] border-t border-white/[0.04]">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase mb-4 font-medium max-w-none">
-            Ready to Begin
-          </p>
+          <div className="mb-4">
+            <p className="text-[#cfa777]/60 text-[10px] tracking-[0.4em] uppercase font-medium max-w-none inline-block">
+              Ready to Begin
+            </p>
+          </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 tracking-tight">
             Start Training.
           </h2>

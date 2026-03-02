@@ -195,7 +195,7 @@ p {
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 12s linear infinite;
+  animation: infinite-scroll 8s linear infinite;
 }
 
 /* Proof Ticker Animation (slower, premium feel) */
@@ -216,6 +216,19 @@ p {
   .animate-proof-ticker {
     animation: none;
   }
+}
+
+/* Hero Sponsors Strip Animation */
+@keyframes heroMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.hero-marquee-track {
+  animation: heroMarquee 44s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 /* Progress Bar Animation */
